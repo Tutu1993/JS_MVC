@@ -6,6 +6,8 @@ use scarf\lib\route;
 class core
 {
     public static $classMap = array();
+	public static $ctrlClass;
+	public static $action;
     public $assignData;
 
 	// 加载路由类，并调用控制类
@@ -14,6 +16,9 @@ class core
         $route = new route();
         $ctrlClass = $route->ctrl;
         $action = $route->action;
+		self::$ctrlClass = $ctrlClass;
+		self::$action = $action;
+		p(self::$action);
         $ctrlFile =  APP.'/ctrl/'.$ctrlClass.'Ctrl'.PHP;
         $ctrlModule = MODULE.'\\ctrl\\'.$ctrlClass.'Ctrl';
 
@@ -21,14 +26,16 @@ class core
             include $ctrlFile;
             $ctrl = new $ctrlModule;
 
-            if (is_callable(array($ctrl, $action))) {
-                $ctrl->$action();
-            } else {
-                // Header("Location:/public/error_404.html");
-                throw new \Exception('Can not find the action: '.$action);
-            }
+			if(isset($action)){
+				if (is_callable(array($ctrl, $action))) {
+	                $ctrl->$action();
+	            } else {
+	                // Header("Location:http://localhost/error/error_404");
+	                throw new \Exception('Can not find the action: '.$action);
+	            }
+			}
         } else {
-            // Header("Location:/public/error_404.html");
+            // Header("Location:http://localhost/error/error_404");
             throw new \Exception('Can not find the ctrl: '.$ctrlClass);
         }
     }

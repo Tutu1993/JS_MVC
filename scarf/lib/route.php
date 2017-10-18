@@ -23,12 +23,11 @@ class route
             $count = count($array);
             $i = 2;
             while ($i < $count) {
-                $_GET[$array[$i]] = $array[$i + 1];
+                $_GET[$array[$i]] = isset($array[$i + 1]) ? $array[$i + 1] : null;
                 $i += 2;
             }
         } else {
             $this->ctrl = conf::get('route', 'ctrl');
-            $this->action = conf::get('route', 'action');
         }
     }
 }
