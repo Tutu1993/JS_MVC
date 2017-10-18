@@ -18,7 +18,6 @@ class core
         $action = $route->action;
 		self::$ctrlClass = $ctrlClass;
 		self::$action = $action;
-		p(self::$action);
         $ctrlFile =  APP.'/ctrl/'.$ctrlClass.'Ctrl'.PHP;
         $ctrlModule = MODULE.'\\ctrl\\'.$ctrlClass.'Ctrl';
 
