@@ -1,9 +1,9 @@
 <?php
 
 // 定义常量
-define('JS_MVC', realpath('./'));
-define('APP', JS_MVC.'/app');
-define('SCARF', JS_MVC.'/scarf');
+define('MVC', realpath('./'));
+define('APP', MVC.'/app');
+define('CORE', MVC.'/core');
 define('MODULE', '\app');
 define('PHP', '.php');
 define('DEBUG', true);
@@ -22,11 +22,11 @@ if (DEBUG) {
 }
 
 // 引用常用方法函数及核心文件
-include SCARF.'/extra/function.php';
-include SCARF.'/core.php';
+include CORE.'/extra/function.php';
+include CORE.'/Core.php';
 
 // 自动装载文件
-spl_autoload_register('\scarf\core::load');
+spl_autoload_register('\Core\Core::load');
 
 // 调用加载方法
-\scarf\core::run();
+\Core\Core::run();

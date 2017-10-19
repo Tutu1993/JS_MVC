@@ -1,7 +1,7 @@
 <?php
-namespace scarf\lib;
+namespace Core\Lib;
 
-class route
+class Route
 {
     public $ctrl;
     public $action;
@@ -27,7 +27,7 @@ class route
                 $i += 2;
             }
         } else {
-            $this->ctrl = conf::get('route', 'ctrl');
+            $this->ctrl = Conf::get('route', 'ctrl');
         }
     }
 }

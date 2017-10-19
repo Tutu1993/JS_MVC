@@ -1,13 +1,13 @@
 <?php
-namespace scarf\lib;
+namespace Core\Lib;
 
 use Medoo\Medoo;
 
-class model extends Medoo
+class Model extends Medoo
 {
     public function __construct()
     {
-        $option = conf::get('database');
+        $option = Conf::get('database');
         parent::__construct($option);
     }
 }

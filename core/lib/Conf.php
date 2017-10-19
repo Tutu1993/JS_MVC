@@ -1,7 +1,7 @@
 <?php
-namespace scarf\lib;
+namespace Core\Lib;
 
-class conf
+class Conf
 {
     public static $conf = array();
 

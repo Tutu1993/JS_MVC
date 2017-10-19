@@ -1,9 +1,9 @@
 <?php
-namespace scarf;
+namespace Core;
 
-use scarf\lib\route;
+use Core\Lib\Route;
 
-class core
+class Core
 {
     public static $classMap = array();
 	public static $ctrlClass;
@@ -13,7 +13,7 @@ class core
 	// 加载路由类，并调用控制类
     public static function run()
     {
-        $route = new route();
+        $route = new Route();
         $ctrlClass = $route->ctrl;
         $action = $route->action;
 		self::$ctrlClass = $ctrlClass;
@@ -45,7 +45,7 @@ class core
         $class = str_replace('\\', '/', $class);
 
         if (!isset(self::$classMap[$class])) {
-            $file =  JS_MVC.'/'.$class.PHP;
+            $file =  MVC.'/'.$class.PHP;
 
             if (is_file($file)) {
                 include $file;

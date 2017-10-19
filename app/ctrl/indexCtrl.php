@@ -1,9 +1,9 @@
 <?php
 namespace app\ctrl;
 
-use scarf\core;
+use Core\Core;
 
-class indexCtrl extends core
+class indexCtrl extends Core
 {
     public function __construct()
     {
@@ -14,7 +14,7 @@ class indexCtrl extends core
 
     public function index()
     {
-		// $data = array(
+        // $data = array(
         // 	'title' => 'apple'
         // );
         // $this->assign($data);

@@ -1,9 +1,9 @@
 <?php
 namespace app\ctrl;
 
-use scarf\core;
+use Core\Core;
 
-class errorCtrl extends core
+class errorCtrl extends Core
 {
     public function __construct()
     {
