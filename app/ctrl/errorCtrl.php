@@ -1,5 +1,5 @@
 <?php
-namespace app\ctrl;
+namespace App\Ctrl;
 
 use Core\Core;
 

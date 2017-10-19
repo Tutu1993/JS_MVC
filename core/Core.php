@@ -6,40 +6,40 @@ use Core\Lib\Route;
 class Core
 {
     public static $classMap = array();
-	public static $ctrlClass;
-	public static $action;
+    public static $ctrlClass;
+    public static $action;
     public $assignData;
 
-	// 加载路由类，并调用控制类
+    // 加载路由类，并调用控制类
     public static function run()
     {
         $route = new Route();
         $ctrlClass = $route->ctrl;
         $action = $route->action;
-		self::$ctrlClass = $ctrlClass;
-		self::$action = $action;
-        $ctrlFile =  APP.'/ctrl/'.$ctrlClass.'Ctrl'.PHP;
+        self::$ctrlClass = $ctrlClass;
+        self::$action = $action;
+        $ctrlFile =  APP.'/Ctrl/'.$ctrlClass.'Ctrl'.PHP;
         $ctrlModule = MODULE.'\\ctrl\\'.$ctrlClass.'Ctrl';
 
         if (is_file($ctrlFile)) {
             include $ctrlFile;
             $ctrl = new $ctrlModule;
 
-			if(isset($action)){
-				if (is_callable(array($ctrl, $action))) {
-	                $ctrl->$action();
-	            } else {
-	                // Header("Location:http://localhost/error/error_404");
-	                throw new \Exception('Can not find the action: '.$action);
-	            }
-			}
+            if (isset($action)) {
+                if (is_callable(array($ctrl, $action))) {
+                    $ctrl->$action();
+                } else {
+                    // Header("Location:http://localhost/error/error_404");
+                    throw new \Exception('Can not find the action: '.$action);
+                }
+            }
         } else {
             // Header("Location:http://localhost/error/error_404");
             throw new \Exception('Can not find the ctrl: '.$ctrlClass);
         }
     }
 
-	// include 未加载的文件
+    // include 未加载的文件
     public static function load($class)
     {
         $class = str_replace('\\', '/', $class);
@@ -56,7 +56,7 @@ class Core
         }
     }
 
-	// 将 data 分配到 assignData 中
+    // 将 data 分配到 assignData 中
     public function assign($data)
     {
         foreach ($data as $key => $value) {
@@ -64,7 +64,7 @@ class Core
         }
     }
 
-	// 调用 Twig 插件展示页面
+    // 调用 Twig 插件展示页面
     public function display($file)
     {
         if (is_file(APP.'/view/'.$file)) {

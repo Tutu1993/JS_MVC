@@ -4,7 +4,7 @@
 define('MVC', realpath('./'));
 define('APP', MVC.'/app');
 define('CORE', MVC.'/core');
-define('MODULE', '\app');
+define('MODULE', '\App');
 define('PHP', '.php');
 define('DEBUG', true);
 
