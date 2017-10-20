@@ -2,6 +2,7 @@
 namespace App\Ctrl;
 
 use Core\Core;
+use App\Model\Database;
 
 class indexCtrl extends Core
 {
@@ -14,9 +15,7 @@ class indexCtrl extends Core
 
     public function index()
     {
-        // $data = array(
-        // 	'title' => 'apple'
-        // );
+		// $database = new Database('info');
         // $this->assign($data);
         $this->display('index.html');
     }
