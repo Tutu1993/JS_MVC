@@ -6,16 +6,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Editor</title>
+	<link rel="stylesheet" href="/resource/css/normalize.min.css">
 </head>
 
 <body>
-	<div id="editor"></div>
+	<div id="editor">
+		<p>请输入您想要的内容！</p>
+	</div>
 	<script type="text/javascript" src="/resource/js/wangEditor.min.js"></script>
 	<script type="text/javascript">
-		var E = window.wangEditor
-		var editor = new E('#editor')
-		editor.customConfig.uploadImgServer = '/app/interface/imgUpload'
-		editor.create()
+		const E = window.wangEditor;
+		const editor = new E('#editor');
+		editor.customConfig.uploadImgServer = '/app/interface/imgUpload';
+		editor.create();
 	</script>
 </body>
 
