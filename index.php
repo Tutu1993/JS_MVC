@@ -12,12 +12,12 @@ include "vendor/autoload.php";
 
 // 设定是否 DEBUG
 if (DEBUG) {
-	$whoops = new \Whoops\Run;
-	$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
-	$whoops->register();
-	ini_set('display_errors', 'On');
+    $whoops = new \Whoops\Run;
+    $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+    $whoops->register();
+    ini_set('display_errors', 'On');
 } else {
-	ini_set('display_errors', 'Off');
+    ini_set('display_errors', 'Off');
 }
 
 // 引用常用方法函数及核心文件

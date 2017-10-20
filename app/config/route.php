@@ -1,4 +1,4 @@
 <?php
 return [
-	'ctrl' => 'index'
+    'ctrl' => 'index'
 ];
