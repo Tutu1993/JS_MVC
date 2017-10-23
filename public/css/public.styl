@@ -1,0 +1,94 @@
+body
+	font-family Microsoft YaHei
+// 导航栏部分 start
+.nav-reset
+	background-color rgba(#6f716f, 0.5)
+	border-bottom 1px solid #969aa1
+	-webkit-transition background-color .5s ease-in-out
+	transition background-color .5s ease-in-out
+	.navbar-brand
+		height 96px
+		padding 27px 15px
+	.navbar-toggle
+		border 1px solid #fff
+		margin 31px 15px 31px 0
+		>.icon-bar
+			background-color #fff
+	.navbar-collapse
+		a
+			font-size 16px
+			line-height 20px
+			color #fff
+			padding 38px 25px
+			&:hover
+				background-color rgba(#6f716f, 0.6)
+	img
+		max-height 42px
+	img.logo-dark
+		display none
+@media (max-width: 768px)
+	.nav-reset
+		.navbar-collapse
+			a
+				padding 10px 25px
+.top-nav-collapse
+	background-color #fff
+	img.logo-light
+		display none
+	img.logo-dark
+		display inline
+	.navbar-toggle
+		border 1px solid #969aa1
+		>.icon-bar
+			background-color #969aa1
+	.navbar-collapse
+		a
+			color #242424
+			&:hover
+				background-color #eee
+// 导航栏部分 end
+// 底部部分 start
+footer
+	height 600px
+	background-color #242424
+	div.footer-link
+		text-align center
+		font-size 0
+		padding 95px 0 32px
+		position relative
+		overflow hidden
+		justify-content space-around
+		display flex
+		width 590px
+		margin 0 auto
+		&:after
+			content ''
+			position absolute
+			border-bottom 1px solid #fff
+			width 590px
+			height 0
+			bottom 0
+			left calc(50% - 295px)
+		a
+			display inline
+			color #fff
+			font-size 14px
+			line-height 14px
+	div.footer-content
+		text-align center
+		padding 73px 0 0
+		font-size 0
+		color #fff
+		img
+			margin-bottom 30px
+		p
+			font-size 14px
+		span
+			display block
+			font-size 12px
+			margin-top 97px
+@media (max-width: 590px)
+	footer
+		div.footer-link
+			width 100%
+// 底部部分 end

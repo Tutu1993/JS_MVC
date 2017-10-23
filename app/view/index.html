@@ -6,10 +6,73 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
+	<link rel="stylesheet" href="/resource/css/normalize.min.css">
+	<link rel="stylesheet" href="/resource/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/public/css/public.min.css">
 </head>
 
 <body>
-	Hello,world!
+	<!-- nav-part start -->
+	<nav class="navbar navbar-transparent navbar-fixed-top nav-reset">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+				<a class="navbar-brand navbar-left" href="#">
+					<img class="logo-light" alt="Brand" src="/public/image/logo-light.png">
+		            <img class="logo-dark" alt="Brand" src="/public/image/logo-dark.png">
+                </a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">关于我们</a></li>
+					<li><a href="#">聚焦行业</a></li>
+					<li><a href="#">业务模式</a></li>
+					<li><a href="#">新闻</a></li>
+					<li><a href="#">联系我们</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- nav-part end -->
+	<div style="background: url('/public/image/banner.jpg');width: 100%;height:920px;"></div>
+	<!-- footer-part start -->
+	<footer>
+		<div class="footer-link">
+			<a href="#">关于我们</a>
+			<a href="#">聚焦行业</a>
+			<a href="#">业务模式</a>
+			<a href="#">新闻</a>
+			<a href="#">联系我们</a>
+		</div>
+		<div class="footer-content">
+			<img src="/public/image/logo-origin.png" alt="Logo">
+			<p>深圳前海凯融资本管理有限公司（凯融资本）</p>
+			<p>合作邮箱：amyhong@sinokrcapital.com</p>
+			<p>应聘邮箱： wangyanan@sinokrcapital.com</p>
+			<p>电话：0086 10 57265988 / 56289199</p>
+			<p>地址：北京市朝阳区建国路89号华贸中心4号商务楼2303</p>
+			<span>版权所有：深圳前海凯融资本管理有限公司（凯融资本）  粤ICP备17001351号   技术支持：承点科技</span>
+		</div>
+	</footer>
+	<!-- footer-part end -->
+	<!-- js-part start -->
+	<script src="/resource/js/jquery.min.js"></script>
+	<script src="/resource/js/bootstrap.min.js"></script>
+	<script>
+		$(window).scroll(function() {
+			if ($(".navbar").offset().top > 50) {
+				$(".navbar-fixed-top").addClass("top-nav-collapse");
+			} else {
+				$(".navbar-fixed-top").removeClass("top-nav-collapse");
+			}
+		});
+	</script>
+	<!-- js-part end -->
 </body>
 
 </html>
