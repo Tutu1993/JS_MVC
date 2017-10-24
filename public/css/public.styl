@@ -2,56 +2,73 @@ body
 	font-family Microsoft YaHei
 a:link
 	text-decoration none
+ul
+	list-style none
+.min-width
+	min-width 1200px
 .container
 	width 1200px
 	margin 0 auto
+.float-left
+	float left
+.float-right
+	float right
+.clear
+	&:after
+		content ''
+		clear both
+		display block
+		overflow hidden
+		font-size 0
+		height 0
 // 导航栏部分 start
-nav
+.navbar
 	background-color rgba(#6f716f, 0.5)
 	border-bottom 1px solid #969aa1
+	position fixed
+	width 100%
 	-webkit-transition background-color .5s ease-in-out
 	transition background-color .5s ease-in-out
-	.navbar-brand
-		height 96px
-		padding 27px 15px
-	.navbar-toggle
-		border 1px solid #fff
-		margin 31px 15px 31px 0
-		>.icon-bar
-			background-color #fff
-	.navbar-collapse
+	.float-left
 		a
+			display block
+			height 42px
+			padding 27px 35px
+	.float-right
+		ul
+			margin 0
+			padding 0 10px 0 0
+			li
+				float left
+		a
+			display block
 			font-size 16px
 			line-height 20px
 			color #fff
 			padding 38px 25px
-			&:hover,&:focus
+			&:hover, &:focus
 				background-color rgba(#6f716f, 0.6)
 	img
 		max-height 42px
 	img.logo-dark
 		display none
-.top-nav-collapse
+.nav-collapse
 	background-color #fff
 	img.logo-light
 		display none
 	img.logo-dark
 		display inline
-	.navbar-toggle
-		border 1px solid #969aa1
-		>.icon-bar
-			background-color #969aa1
-	.navbar-collapse
+	.float-right
 		a
 			color #242424
-			&:hover
+			&:hover, &:focus
 				background-color #eee
 // 导航栏部分 end
 // 底部部分 start
 footer
 	height 600px
 	background-color #242424
-	div.footer-link
+	.footer-link
 		text-align center
 		font-size 0
 		padding 95px 0 32px
@@ -74,7 +91,7 @@ footer
 			color #fff
 			font-size 14px
 			line-height 14px
-	div.footer-content
+	.footer-content
 		text-align center
 		padding 73px 0 0
 		font-size 0

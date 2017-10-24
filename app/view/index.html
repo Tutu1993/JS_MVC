@@ -12,16 +12,16 @@
 
 <body>
 	<!-- nav-part start -->
-	<nav>
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand navbar-left" href="#">
+	<nav class="navbar min-width">
+		<div class="container clear">
+			<div class="float-left">
+				<a href="#">
 					<img class="logo-light" alt="Brand" src="/public/image/logo-light.png">
 		            <img class="logo-dark" alt="Brand" src="/public/image/logo-dark.png">
 	            </a>
 			</div>
-			<div class="collapse navbar-collapse" id="navbar">
-				<ul class="nav navbar-nav navbar-right">
+			<div class="float-right">
+				<ul class="clear">
 					<li><a href="#">关于我们</a></li>
 					<li><a href="#">聚焦行业</a></li>
 					<li><a href="#">业务模式</a></li>
@@ -32,9 +32,9 @@
 		</div>
 	</nav>
 	<!-- nav-part end -->
-	<div style="background: url('/public/image/banner.jpg');width: 100%;height:920px;"></div>
+	<div  class="min-width" style="background: url('/public/image/banner.jpg');width: 100%;height:920px;"></div>
 	<!-- footer-part start -->
-	<footer>
+	<footer class="min-width">
 		<div class="container">
 			<div class="footer-link">
 				<a href="#">关于我们</a>
@@ -53,7 +53,6 @@
 				<span>版权所有：深圳前海凯融资本管理有限公司（凯融资本）  粤ICP备17001351号   技术支持：承点科技</span>
 			</div>
 		</div>
-
 	</footer>
 	<!-- footer-part end -->
 	<!-- js-part start -->
@@ -61,9 +60,9 @@
 	<script>
 		$(window).scroll(function() {
 			if ($(".navbar").offset().top > 50) {
-				$(".navbar-fixed-top").addClass("top-nav-collapse");
+				$(".navbar").addClass("nav-collapse");
 			} else {
-				$(".navbar-fixed-top").removeClass("top-nav-collapse");
+				$(".navbar").removeClass("nav-collapse");
 			}
 		});
 	</script>
