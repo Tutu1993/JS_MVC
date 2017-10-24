@@ -1,7 +1,12 @@
 body
 	font-family Microsoft YaHei
+a:link
+	text-decoration none
+.container
+	width 1200px
+	margin 0 auto
 // 导航栏部分 start
-.nav-reset
+nav
 	background-color rgba(#6f716f, 0.5)
 	border-bottom 1px solid #969aa1
 	-webkit-transition background-color .5s ease-in-out
@@ -20,17 +25,12 @@ body
 			line-height 20px
 			color #fff
 			padding 38px 25px
-			&:hover
+			&:hover,&:focus
 				background-color rgba(#6f716f, 0.6)
 	img
 		max-height 42px
 	img.logo-dark
 		display none
-@media (max-width: 768px)
-	.nav-reset
-		.navbar-collapse
-			a
-				padding 10px 25px
 .top-nav-collapse
 	background-color #fff
 	img.logo-light
@@ -87,8 +87,4 @@ footer
 			display block
 			font-size 12px
 			margin-top 97px
-@media (max-width: 590px)
-	footer
-		div.footer-link
-			width 100%
 // 底部部分 end
