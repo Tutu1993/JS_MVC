@@ -16,7 +16,10 @@ class indexCtrl extends Core
     public function index()
     {
         // $database = new Database('info');
-        // $this->assign($data);
+        $data = [
+			'title' => '首页'
+		];
+        $this->assign($data);
         $this->display('index.html');
     }
 }
