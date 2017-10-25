@@ -34,9 +34,9 @@ if (isset($_FILES)) {
     }
 }
 
-echo json_encode(array(
+echo json_encode([
     'errno' => 0,
     'data'  => $address,
-));
+]);
 
 die();

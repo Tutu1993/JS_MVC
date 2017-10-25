@@ -10,6 +10,31 @@
 
 <body>
 	404 not found!
+	<script src="/resource/js/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			const $table = 'apple';
+			const $type = 'select';
+			const $data = {
+					columns: 'uid',
+					where: {
+						name: 'chengdiankeji'
+					}
+				};
+			$.ajax({
+		        type: 'POST',
+		        url: '/app/interface/database',
+		        data: {
+					table: $table,
+		            type: $type,
+					data: $data
+		        },
+		        success: function (d){
+		            console.log(JSON.parse(d));
+		        }
+        	});
+		});
+	</script>
 </body>
 
 </html>

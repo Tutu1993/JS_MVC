@@ -5,7 +5,7 @@ use Core\Lib\Model;
 
 class Database extends Model
 {
-    public $table = '';
+    public $table;
 
     public function __construct($table)
     {
@@ -40,6 +40,12 @@ class Database extends Model
     public function get_d($columns, $where)
     {
         $result = $this->get($this->table, $columns, $where);
+        return $result;
+    }
+
+    public function has_d($where)
+    {
+        $result = $this->has($this->table, $where);
         return $result;
     }
 }
