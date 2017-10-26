@@ -1,0 +1,69 @@
+{% extends "public.html" %}
+{% block meta %}
+<meta name="keywords" content="{{ keywords }}">
+<meta name="description" content="{{ description }}">
+{% endblock %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="/public/css/about.min.css">
+{% endblock %}
+
+{% block content %}
+<section class="min-width banner">
+	<div class="container">
+		<input type="radio" name="type" value="1" id="six-layout-1" checked>
+		<label for="six-layout-1">
+			<div class="six-box six-box-size-1 six-layout-1">
+				<h4>凯融简介</h4>
+				<p>brief introduction</p>
+			</div>
+		</label>
+		<input type="radio" name="type" value="2" id="six-layout-2">
+		<label for="six-layout-2">
+			<div class="six-box six-box-size-2 six-layout-2">
+				<h4>核心团队</h4>
+				<p>Core team</p>
+			</div>
+		</label>
+		<input type="radio" name="type" value="3" id="six-layout-3">
+		<label for="six-layout-3">
+			<div class="six-box six-box-size-2 six-layout-3">
+				<h4>投资理念</h4>
+				<p>Investment idea</p>
+			</div>
+		</label>
+		<input type="radio" name="type" value="4" id="six-layout-4">
+		<label for="six-layout-4">
+			<div class="six-box six-box-size-2 six-layout-4">
+				<h4>凯融文化</h4>
+				<p>kairong Culture</p>
+			</div>
+		</label>
+		<div class="content" id="content-1">
+			<h4>凯融简介</h4>
+			<h5>kairong brief introduction</h5>
+			<p>深圳前海凯融资本管理有限公司（简称凯融资本）是行业内领先的知名企业。公司成立于2016年，是一家在深圳注册，在北京设有行业研究中心的投资公司。公司的主要业务是私募股权投资，重点布局航空、教育、消费升级等领域。自成立以来，凯融资本的团队就本着专业认真负责的态度在航空、教育、消费升级等领域投资了多个具有影响力的项目。在公司核心团队的带领下凯融资本在飞速进步成长。</p>
+		</div>
+		<div class="content" id="content-2">
+			<h4>凯融团队</h4>
+			<h5>Kai Rong team</h5>
+			<p>凯融资本团队在金融、模式、运营方面的专业化经验和职业操守确保凯融资本成为资本、运营、管理三位一体的全方位解决方案专家。凯融资本以专业顾问团队和合伙人团队为核心，搭建以7大产业研究中心和6大行业研究中心为支撑的产融运作生态平台，不仅提供精准的数据分析和趋势研判，而且提供高效率、高效益的业务运营、产业布局、并购整合、资本运作等多方位的增值服务，帮助凯融资本的合作伙伴获得产业、资本的高效率、高效益多重回报。 </p>
+		</div>
+		<div class="content" id="content-3">
+			<h4>投资理念</h4>
+			<h5>Investment idea</h5>
+			<p>凯融人本着稳健+创新的投资理念，高效整合资源，为投资人创造风险可控的投资收益，为合作企业实现产业、资本市场的综合业绩提升。<br>稳健是资本的保险，创新是资本的活泉；高效资源整合，产业资本同成长。<br>精于效率，提升财务表现，持续优化运营；善于成长，随时处于可扩张有增长潜力的市场；资本为源，资本与资源的最佳机会相结合。<br>我们始终坚信只有善于整合资源的企业才可能在效益、效率、能力三方面齐头并进，成为健康发展、可持续成长的企业。<br>我们始终坚持创新+稳健的投资理念；坚持模式创新与产品创新，运作稳健与管理稳健。</p>
+		</div>
+		<div class="content" id="content-4">
+			<h4>凯融文化</h4>
+			<h5>Kai Rong culture</h5>
+			<p>大爱无声，大德无形。尊重为德，凯融资本自成立以来就以尊重待人。尊重市场：遵循商业规律，尊重市场规则；尊重客户，以专业负责的态度付出高品质的服务；尊重合作伙伴，以创业的心态与合作伙伴共同成长。对于凯融来说尊重是最好的表达式。<br>心怀坚毅，则事无所惧。对于凯融人来说，坚毅就是不止激情，不止坚持。每一位凯融人在工作过程中都满怀热情与激情，每一次机会都值得热情追寻，每一个项目都值得激情投入。并在每一个项目实施过程中初心不变，毅力不改，激情不减。</p>
+		</div>
+	</div>
+</section>
+{% endblock %}
+
+{% block js %}
+{% endblock %}

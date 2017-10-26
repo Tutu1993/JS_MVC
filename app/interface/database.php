@@ -85,12 +85,8 @@ function switchType ($type, $database, $data) {
 	}
 }
 
-$database = new Database('info');
-$result = $database->has_d(['uid' => '3']);
-p($result);
+$result = isset($_POST['table']) ? (isset($_POST['type']) ? (isset($_POST['data']) ? switchType($_POST['type'], new Database($_POST['table']), $_POST['data']) : 'Please confirm isset [data]') : 'Please confirm isset [type]') : 'Please confirm isset [table]';
 
-// $result = isset($_POST['table']) ? (isset($_POST['type']) ? (isset($_POST['data']) ? switchType($_POST['type'], new Database($_POST['table']), $_POST['data']) : 'Please confirm isset [data]') : 'Please confirm isset [type]') : 'Please confirm isset [table]';
-
-// echo json_encode($result);
+echo json_encode($result);
 
 die();
