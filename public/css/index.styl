@@ -1,14 +1,13 @@
 // 通用样式 start
-h4,h5,h6,ul,li,p
+a
+  color #fff
+h4,h5,h6,ul,li
 	margin 0
 	padding 0
-
-.margin-top{
-  margin-top 105px
-}
-.margin-top-1{
-  margin-top 60px
-}
+.module7 ul li
+  padding-right 30px
+  padding-left 18px
+  background url("/public/image/index/fang.jpg") no-repeat 0 15px
 // 通用样式 end
 // 模块1，介绍部分 start
 .banner
@@ -16,28 +15,58 @@ h4,h5,h6,ul,li,p
 	height 920px
 .thumbnail
 	width 260px
-	padding 119px 40px 104px 0
-
-//.margin-top-1{margin-top:60px}
+	height 585px
+	margin 120px 40px 105px 0
+.img1
+	background url("/public/image/index/3.jpg") no-repeat center bottom
+.img3
+	background url("/public/image/index/1.jpg") no-repeat center bottom
+.img2
+	background url("/public/image/index/2.jpg") no-repeat center top
+.img4
+	background url("/public/image/index/4.jpg") no-repeat center top
+.img4,.img2
+	position relative
+	&:hover
+		.caption2
+			top 0
+			transition all .8s
+			height 600px
+.img1,.img3
+	&:hover
+		.caption-hover1
+			height 540px
+			transition all .8s
 .caption
+	color #515769
+	transition all .5s
+	-webkit-transition all .5s
 	h4
-		margin 40px 0 0 0
+		padding-top 40px
 		font-size 24px
-		color #515769
 	h5
-		margin 7px 0 29px 0
+		padding 7px 0 29px 0
 		font-size 20px
-		color #515769
-  p{
-    margin 0
-    color #b5b5b7
-    font-size 12px
-    line-height 20px
-    width 260px
-    max-height 200px
-    overflow hidden}
-.p_color
+	p
+		margin 0
+		color #b5b5b7
+		font-size 12px
+		line-height 20px
+		width 260px
+.caption-bc
+  background-color #fff
+.caption2
+	position absolute
+	top 46%
+	height 310px
+	overflow hidden
+.font-weight
 	font-weight bolder
+.caption-hover1
+	height 210px
+	overflow hidden
+	position absolute
+	top 115%
 // 模块1，介绍部分 end
 // 模块2，聚焦行业 start
 .focus
@@ -52,9 +81,8 @@ h4,h5,h6,ul,li,p
 		margin-top 140px
 		h4
 			font-size 36px
-			margin 0 0 27px 0
+			padding-bottom 27px
 		a
-			color #fff
 			display inline-block
 			text-align center
 			width 140px
@@ -64,9 +92,8 @@ h4,h5,h6,ul,li,p
 			background-color #515769
 			border none
 			font-size 14px
-			font-weight bolder
 	div.focus-last-child
-		margin 95px 0 0 200px
+		padding 95px 0 0 200px
 		width 460px
 .focus-last-child-1
 	height 188px
@@ -78,11 +105,6 @@ h4,h5,h6,ul,li,p
 		margin-bottom 30px
 	span
 		font-size 12px
-	p
-		margin 0
-		font-size 14px
-.p-bottom
-	margin-bottom 40px!important
 .focus-last-child-2
 	background-color #737373
 	margin 0 0 5px 0
@@ -100,22 +122,20 @@ h4,h5,h6,ul,li,p
 	span
 		color #a6a7aa
 .module3-1
-	margin-bottom 60px
-	padding 0 30px
+	padding 0 30px 60px 30px
 .module3-2
 	display flex
 	justify-content flex-start
 	padding 0 30px
 	div
 		width 350px
-		margin-right 42px
+		padding-right 42px
 		position relative
 		a
 			color: #a6a7aa
 		div
 			h5
 				font-size 16px
-				font-weight bolder
 				color #515769
 				display inline-block
 				margin 26px 8px 30px 0
@@ -123,7 +143,10 @@ h4,h5,h6,ul,li,p
 	display inline-block
 	font-size 10px
 .span
+	display block
 	width 350px
+	height 120px
+	overflow hidden
 	margin-bottom 24px
 	font-size 14px
 	line-height 20px
@@ -134,8 +157,6 @@ h4,h5,h6,ul,li,p
 	top 100%
 	left 0
 	font-size 12px
-	font-weight bolder
-	margin-top 24px
 	i
 		display inline-block
 		width 8px
@@ -169,7 +190,7 @@ h4,h5,h6,ul,li,p
 .tree-style
 	color #fff
 	font-size 12px
-.tree1
+.tree1,.tree2,.tree3,.tree4
 	position absolute
 	top 10%
 	left 51%
@@ -185,47 +206,20 @@ h4,h5,h6,ul,li,p
 		left -9.7%
 .tree2
 	text-align right
-	position absolute
 	top 25%
 	left 33%
 	&:after
-		content ""
-		width 1px
-		height 1px
-		background-color #fff
-		border 10px solid #fff
-		border-radius 50%
-		position absolute
-		top 0
 		left 104.5%
 .tree3
-	position absolute
 	top 40%
 	left 51%
 	&:after
-		content ""
-		width 1px
-		height 1px
-		background-color #fff
-		border 10px solid #fff
-		border-radius 50%
-		position absolute
-		top 0
 		left -9.8%
 .tree4
 	text-align right
-	position absolute
 	top 55%
 	left 33%
 	&:after
-		content ""
-		width 1px
-		height 1px
-		background-color #fff
-		border 10px solid #fff
-		border-radius 50%
-		position absolute
-		top 0
 		left 104.5%
 .tree-span
 	display block
@@ -236,7 +230,7 @@ h4,h5,h6,ul,li,p
 // 模块4，新闻报道 end
 // 横线 start
 .line
-	width 63%
+	width 62%
 	height 129px
 	margin 0 auto
 	div
@@ -259,6 +253,7 @@ h4,h5,h6,ul,li,p
 	box-shadow 3px 3px 3px #e1e1e1
 	text-align center
 	color #515769
+	position relative
 	button
 		display block
 		background-color #515769
@@ -268,6 +263,9 @@ h4,h5,h6,ul,li,p
 		border-radius 3px
 		color #fff
 		margin 0 auto
+		position absolute
+		left 34%
+		top 68%
 	img
 		display block
 		margin 0 auto
@@ -285,6 +283,8 @@ h4,h5,h6,ul,li,p
 		padding 45px 0 25px 0
 .span-bottom
 	display block
+#span-bottom
+	display block
 	margin-bottom 55px
 // 模块6，联系我们 end
 //模块7，加入我们 start
@@ -300,30 +300,23 @@ h4,h5,h6,ul,li,p
 .module7-2
 	display flex
 	justify-content center
+.module7-h4
+  margin 50px 0 39px 58px
+  font-size 22px
 .module7-2-1
 	width 550px
 	height 600px
 	margin 65px 40px 0 40px
 	background-color #fafafa
+	box-shadow 1px 1px 1px #ececec
+	border-radius 10px
 	position relative
-	i
-		display inline-block
-		width 8px
-		height 2px
-		background-color #901d22
-		position absolute
-		top 44%
-		left -1%
-	h4
-		margin 50px 0 39px 58px
-	 	font-size 22px
 	h5
-		margin 0 0 15px 78px
+		margin 40px 0 15px 78px
 	li
 		font-size 14px
 		margin 0 0 0 104px
-		line-height 30px
-		position relative
+		line-height 25px
 	div
 		position absolute
 		left 25%
@@ -332,9 +325,7 @@ h4,h5,h6,ul,li,p
 		span
 			display block
 			font-size 14px
-			margin-bottom 20px
+			margin-bottom 10px
 .module7-2-2
 	margin-left 80px
 //模块7，加入我们 end
-
-
