@@ -1,0 +1,40 @@
+{% extends "public.html" %}
+{% block meta %}
+<meta name="keywords" content="{{ keywords }}">
+<meta name="description" content="{{ description }}">
+{% endblock %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="/public/css/model.min.css">
+{% endblock %}
+
+{% block content %}
+<section class="min-width banner">
+	<div class="container">
+		<h4>业务模式</h4>
+		<p>实业依托金融做大，金融透过实业落地</p>
+		<div class="clear">
+			<div>
+				<img src="public/image/model/logo-1.png" alt="股权融资">
+				<h5>股权融资</h5>
+				<p>凯融资本的私募融资团队为各阶段的企业提供专业、量身定制的融资服务方案，提供融资支持和融后管理。从公司发展初期即深耕各细分领域，与中国各领域企业管理者建立长远紧密的合作关系。凯融资本团队拥有广泛深入的产品知识、密切追踪市场和投资人动态、精准把握融资时机和节奏，以确保项目高效有序地执行。</p>
+			</div>
+			<div>
+				<img src="public/image/model/logo-2.png" alt="基金管理">
+				<h5>基金管理</h5>
+				<p>与政府合作成立产业基金，与上市公司合作设立并购基金。凯融资本团队在产业基金的设立、项目导入、整合管理方面有丰富经验与专业知识，能够帮助合作伙伴稳健获益。业务重点是航空、教育、环保产业，优势在于项目导入和产融整合。</p>
+			</div>
+			<div>
+				<img src="public/image/model/logo-3.png" alt="并购重组">
+				<h5>并购重组</h5>
+				<p>为企业提供资产重组与兼并收购专业服务，包括但不限于并购方案设计、并购标的选择、并购实施协助、并购后的整合管理。</p>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+
+{% block js %}
+{% endblock %}

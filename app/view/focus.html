@@ -1,0 +1,69 @@
+{% extends "public.html" %}
+{% block meta %}
+<meta name="keywords" content="{{ keywords }}">
+<meta name="description" content="{{ description }}">
+{% endblock %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="/public/css/focus.min.css">
+<script>
+	function scroll(id) {
+		$("html,body").animate({scrollTop: $("#" + id).offset().top}, 600);
+	};
+</script>
+{% endblock %}
+
+{% block content %}
+<section class="min-width banner">
+	<div class="container">
+		<div class="title">
+			<h4>聚焦行业</h4>
+			<h5>Focus industry</h5>
+			<p>凯融资本的主要业务是私募股权投资，重点布局航空、教育、消费升级领域</p>
+		</div>
+		<div class="clear content">
+			<div>
+				<a href="javascript: scroll('aviation');" class="pic">
+					<img src="/public/image/focus/content-1.jpg" alt="航空">
+					<h4>航空</h4>
+					<p>aviation</p>
+				</a>
+				<div id="aviation" class="txt">
+					<h5>深耕“航空经济”打造航空+模式</h5>
+					<p>凯融资本作为专业的基金管理团队，在航空领域与各级政府投资平台建立了良好的合作关系，以产业基金、政府引导基金托管、专项基金等多种模式共同推进地方航空产业的产业结构搭建和实体运营，打造新型航空经济平台。</p>
+					<p>凯融资本在与地方政府投资平台合作推进航空产业发展的同时，亦与国内上市公司共同以并购基金、专项基金、投资公司等多种方式合作共同推进企业产融战略的实施。以“实体投资+资本运作”的发展模式，深耕“航空经济“，打造航空+模式，与企业联手创造业务转型、升级新机遇，实现资本市场表现和运营业绩的持续提升。</p>
+					<p>凯融资本在航空通信、通用航空制造、客改货和通用航空运营等领域具有成功案例，并与国际、国内具有领先航空制造技术、通用航空运营经验的团队建立稳定合作关系。</p>
+				</div>
+			</div>
+			<div>
+				<a href="javascript: scroll('education');" class="pic">
+					<img src="/public/image/focus/content-2.jpg" alt="教育">
+					<h4>教育</h4>
+					<p>education</p>
+				</a>
+				<div id="education" class="txt">
+					<h5>长期关注中国境内职业教育和专业培训国际K12教育、国际职业培训领域</h5>
+					<p>教育产业是一个国家发展的根本，也是国家创新动力的基石。凯融资本长期关注中国境内职业教育和专业培训、国际K12教育、国际职业培训领域。凯融资本通过与国内上市公司发起专项并购基金方式，依托企业现有资源，高效整合行业优质资产，稳健构筑企业业务版图，并以其专业技术能力、职业的服务精神和国际化资源整合，成为国内上市企业的长期合作伙伴。</p>
+					<p>凯融资本国际团队以PIPE方式在北美地区、英联邦地区布局K12教育、职业培训领域的国际市场，基于凯融资本团队的国际视野、对中国市场的运作实力和跨文化的整合能力，赢得国际企业集团的认可和信任，成为北美上市企业的长期合作伙伴，真正实现以全球视野综合布局中国教育市场的发展目标。</p>
+				</div>
+			</div>
+			<div>
+				<a href="javascript: scroll('upgrade');" class="pic">
+					<img src="/public/image/focus/content-3.jpg" alt="消费升级">
+					<h4>消费升级</h4>
+					<p>Consumption upgrade</p>
+				</a>
+				<div id="upgrade" class="txt">
+					<h5>凯融资本以专业的行业研究和<br>高效的资源整合密切关注消费升级领域的趋势与机会</h5>
+					<p>消费升级，升级的是需求，从对品类的需求到对品牌的需求再到品位的需求，都彰显了人们对物质与精神的双重需求的提高。在此大背景下，在消费升级领域的投资就可以说是在投资趋势投资未来。凯融资本专业的行业研究团队时刻密切关注消费升级领域的各项动态，能够准确把握趋势，精准布局产业，以为合作伙伴带来最大收益。</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+
+{% block js %}
+{% endblock %}
