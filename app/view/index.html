@@ -280,5 +280,9 @@
 
 {% block js %}
 <script src="/resource/js/clipboard.min.js"></script>
-<script src="/public/js/index.js"></script>
+<script>
+    new Clipboard('#btn1');
+    new Clipboard('#btn2');
+    new Clipboard('#btn3');
+</script>
 {% endblock %}
