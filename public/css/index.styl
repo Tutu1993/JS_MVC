@@ -7,16 +7,19 @@ h4,h5,h6,ul,li
 .module7 ul li
   padding-right 30px
   padding-left 18px
-  background url("/public/image/index/fang.jpg") no-repeat 0 15px
+  background url("/public/image/index/fang.jpg") no-repeat 0 12px
 // 通用样式 end
 // 模块1，介绍部分 start
 .banner
 	background url("/public/image/index/banner.jpg") no-repeat center center
 	height 920px
-.thumbnail
-	width 260px
-	height 585px
-	margin 120px 40px 105px 0
+.module1
+  height 685px
+  margin-top 120px
+  display flex
+  justify-content center
+.text-indent
+  text-indent 24px
 .img1
 	background url("/public/image/index/3.jpg") no-repeat center bottom
 .img3
@@ -25,56 +28,65 @@ h4,h5,h6,ul,li
 	background url("/public/image/index/2.jpg") no-repeat center top
 .img4
 	background url("/public/image/index/4.jpg") no-repeat center top
+.img4,.img2,.img1,.img3
+  height 580px
+  width 270px
+  color #515769
+  margin-left 40px
+  h4
+    font-size 24px
+  h5
+    font-size 20px
+  p
+    font-size 12px
+    line-height 20px
+  div
+    width 270px
+    height 108px
+    overflow hidden
+    background-color #fff
 .img4,.img2
-	position relative
+  transition all .8s
+  padding-top 310px
+  h4
+    background-color #fff
+  h5
+    background-color #fff
+  .img2-hover
+    transition all .8s
+.img4,.img2
 	&:hover
-		.caption2
-			top 0
-			transition all .8s
-			height 600px
+    padding-top 0
+    transition all .8s
+    .img2-hover
+      height 530px
 .img1,.img3
-	&:hover
-		.caption-hover1
-			height 540px
-			transition all .8s
-.caption
-	color #515769
-	transition all .5s
-	-webkit-transition all .5s
-	h4
-		padding-top 40px
-		font-size 24px
-	h5
-		padding 7px 0 29px 0
-		font-size 20px
-	p
-		margin 0
-		color #b5b5b7
-		font-size 12px
-		line-height 20px
-		width 260px
-.caption-bc
-  background-color #fff
-.caption2
-	position absolute
-	top 46%
-	height 310px
-	overflow hidden
+  .img1-hover
+    transition all .8s
+  h4
+    transition all .8s
+    margin-top 108px
+.img1
+  margin-left 0
+.img1,.img3
+  &:hover
+    .img1-hover
+      transition all .8s
+      height 530px
+    h4
+      margin-top 0
+      transition all .8s
 .font-weight
-	font-weight bolder
-.caption-hover1
-	height 210px
-	overflow hidden
-	position absolute
-	top 115%
+  font-weight bolder
 // 模块1，介绍部分 end
 // 模块2，聚焦行业 start
 .focus
-	height 600px
-	background-color #232323
-	color #fff
-	display flex
-	justify-content center
+  height 700px
+  width 100%
+  background-color #232323
+  color #fff
+  display flex
+  justify-content center
 	div.focus-first-child
 		height 230px
 		width 500px
@@ -93,25 +105,35 @@ h4,h5,h6,ul,li
 			border none
 			font-size 14px
 	div.focus-last-child
-		padding 95px 0 0 200px
-		width 460px
+    padding 95px 0 0 200px
+    width 460px
+    input[type="radio"]
+      display none
+#focus-input1:checked + label > #focus-last-child-1, #focus-input2:checked + label > #focus-last-child-2, #focus-input3:checked + label > #focus-last-child-3
+  display block
+  height 320px
+  background-color #35383f
+  transition all .8s
+  span
+    display block
+#focus-input3:checked + label > #focus-last-child-3
+  height 200px
 .focus-last-child-1
-	height 188px
-	background-color #35383f
-	padding 34px
-	margin-bottom 10px
+  padding 20px 30px
+  margin-bottom 10px
+  height 40px
+  overflow hidden
+  cursor pointer
+  background-color #737373
+  transition all .8s
+.focus-last-child-1
 	h4
 		font-size 16px
-		margin-bottom 30px
 	span
-		font-size 12px
-.focus-last-child-2
-	background-color #737373
-	margin 0 0 5px 0
-	padding 20px 30px
-	span
-		font-size 14px
-		line-height 20px
+    font-size 14px
+    display none
+    margin 20px 30px 0 0
+    line-height 20px
 // 模块2，聚焦行业 end
 // 模块3，业务模式 start
 .module3
@@ -125,7 +147,7 @@ h4,h5,h6,ul,li
 	padding 0 30px 60px 30px
 .module3-2
 	display flex
-	justify-content flex-start
+	justify-content space-around
 	padding 0 30px
 	div
 		width 350px
@@ -140,8 +162,9 @@ h4,h5,h6,ul,li
 				display inline-block
 				margin 26px 8px 30px 0
 .span-inline
-	display inline-block
-	font-size 10px
+  display inline-block
+  font-size 10px
+  text-transform uppercase
 .span
 	display block
 	width 350px
@@ -172,61 +195,57 @@ h4,h5,h6,ul,li
 .module4
 	width 63%
 	margin 0 auto
-	padding 140px 0 0 40px
 	color #a6a7aa
 	.module4-1
-		padding-bottom 50px
+		padding 140px 0 50px 20px
 .module5
-	margin 0 auto
-	height 370px
-	padding-top 50px
-	background-color #232323
-	position relative
-.border
-	border-left 1px solid #fff
-	height 320px
-	width 0
-	margin 0 auto
+  padding-top 50px
+  height 370px
+  background-color #232323
 .tree-style
-	color #fff
-	font-size 12px
-.tree1,.tree2,.tree3,.tree4
-	position absolute
-	top 10%
-	left 51%
-	&:after
-		content ""
-		width 1px
-		height 1px
-		background-color #fff
-		border 10px solid #fff
-		border-radius 50%
-		position absolute
-		top 0
-		left -9.7%
-.tree2
-	text-align right
-	top 25%
-	left 33%
-	&:after
-		left 104.5%
-.tree3
-	top 40%
-	left 51%
-	&:after
-		left -9.8%
-.tree4
-	text-align right
-	top 55%
-	left 33%
-	&:after
-		left 104.5%
+  height 350px
+  color #fff
+  position relative
+  &:before
+    content ""
+    width 1px
+    height 320px
+    background-color #fff
+    position absolute
+    left 600px
+  a
+    font-size 12px
+.tree-parent1,.tree-parent2
+  width 590px
+  height 300px
+  .tree3
+    &:after
+      top 150px
+      left 596px
+.tree1,.tree3,.tree2,.tree4
+  margin-bottom 120px
+  &:after
+    content ""
+    border 5px solid #fff
+    border-radius 50%
+    position absolute
+    top 0
+    left 596px
+.tree-parent2
+  text-align right
+  margin-top 75px
+  .tree2
+    margin-bottom 118px
+    &:after
+      top 75px
+      left 596px
+  .tree4
+    &:after
+      top 225px
+      left 596px
 .tree-span
 	display block
-	width 300px
-	font-size 12px
 	color #fff
-	margin-bottom 7px
 // 模块4，新闻报道 end
 // 横线 start
 .line
@@ -293,7 +312,7 @@ h4,h5,h6,ul,li
 	padding-top 50px
 	color #515769
 	.module7-1
-		width 60%
+		width 100%
 		margin 0 auto
 		span
 			color #a6a7aa
@@ -304,9 +323,9 @@ h4,h5,h6,ul,li
   margin 50px 0 39px 58px
   font-size 22px
 .module7-2-1
-	width 550px
+	width 600px
 	height 600px
-	margin 65px 40px 0 40px
+	margin 65px 0 0 0
 	background-color #fafafa
 	box-shadow 1px 1px 1px #ececec
 	border-radius 10px
