@@ -1,0 +1,94 @@
+.banner {
+  height: 500px;
+  background: url("/public/image/news/banner.jpg") top center no-repeat;
+}
+.list {
+  padding: 40px 0 118px;
+}
+.list .float-left {
+  padding-left: 40px;
+}
+.list .float-left a {
+  display: block;
+  text-align: center;
+  width: 248px;
+  height: 78px;
+  border: 1px solid #ccc;
+  font-size: 20px;
+  line-height: 80px;
+  color: #232323;
+}
+.list .float-left a:not(:first-child) {
+  margin-top: -1px;
+}
+.list .float-left a.active {
+  color: #fff;
+  background-color: #b72229;
+}
+.list .float-right {
+  padding-right: 30px;
+}
+.list .float-right div.box {
+  display: block;
+  width: 770px;
+  height: 260px;
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  margin-bottom: 30px;
+  position: relative;
+}
+.list .float-right div.box a {
+  font-size: 0;
+  position: relative;
+}
+.list .float-right div.box a h4 {
+  font-size: 18px;
+  color: #232323;
+  margin-top: 15px;
+  position: absolute;
+  left: -420px;
+}
+.list .float-right div.box a img {
+  float: right;
+  width: 320px;
+  height: 220px;
+  background-color: #ccc;
+}
+.list .float-right div.box p,
+.list .float-right div.box span {
+  font-size: 14px;
+  color: #a6a7aa;
+}
+.list .float-right div.box p {
+  margin: 0;
+  text-align: justify;
+  padding: 57px 360px 0 0;
+  line-height: 20px;
+}
+.list .float-right div.box span {
+  position: absolute;
+  bottom: 40px;
+}
+.pagination {
+  padding-top: 32px;
+  text-align: center;
+}
+.pagination a {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border: 2px solid #f3f3f3;
+  border-radius: 1px;
+  color: #a4a4a4;
+  line-height: 26px;
+  font-size: 14px;
+}
+.pagination a.active {
+  border: 2px solid #4695ef;
+  background-color: #4695ef;
+  color: #fff;
+}
+.pagination a.display {
+  background-color: #f3f3f3;
+  color: #bfbfbf;
+}
