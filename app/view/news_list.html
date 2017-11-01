@@ -63,7 +63,7 @@
         				{% endfor %}
 						<a href="javascript:void(0);" class="display">…</a>
 	            		<a href="/news/{{ type }}/page/{{ D_page }}">{{ D_page }}</a>
-	            	{% elseif page - 2 > 0 and page + 2 < D_page %}
+	            	{% elseif page - 3 > 0 and page + 2 < D_page %}
 			            <a href="/news/{{ type }}/page/1">1</a>
 			            <a href="javascript:void(0);" class="display">…</a>
 			            <a href="/news/{{ type }}/page/{{ page - 1 }}">{{ page - 1 }}</a>
@@ -71,7 +71,7 @@
 			            <a href="/news/{{ type }}/page/{{ page + 1 }}">{{ page + 1 }}</a>
 			            <a href="javascript:void(0);" class="display">…</a>
 			            <a href="/news/{{ type }}/page/{{ D_page }}">{{ D_page }}</a>
-	            	{% elseif page - 2 > 0 and page + 2 >= D_page %}
+	            	{% elseif page - 3 > 0 and page + 2 >= D_page %}
 			            <a href="/news/{{ type }}/page/1">1</a>
 			            <a href="javascript:void(0);" class="display">…</a>
 	            		{% for i in D_page - 3 .. D_page %}

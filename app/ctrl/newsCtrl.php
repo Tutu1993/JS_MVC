@@ -40,11 +40,12 @@ class newsCtrl extends Core
 	public function case()
     {
         // $database = new Database('info');
+		$page = isset($_GET['page']) ? $_GET['page'] : 1;
 		$data = [
 			'title' => '案例分析',
 			'type' => 'case',
-			'D_page' => 4,
-			'page' => 0
+			'D_page' => 15,
+			'page' => $page
 		];
         $this->assign($data);
         $this->display('news_list.html');
@@ -53,11 +54,12 @@ class newsCtrl extends Core
 	public function event()
     {
         // $database = new Database('info');
+		$page = isset($_GET['page']) ? $_GET['page'] : 1;
 		$data = [
 			'title' => '凯融活动',
 			'type' => 'event',
-			'D_page' => 4,
-			'page' => 0
+			'D_page' => 11,
+			'page' => $page
 		];
         $this->assign($data);
         $this->display('news_list.html');
