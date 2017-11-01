@@ -8,6 +8,8 @@ h4,h5,h6,ul,li
   padding-right 30px
   padding-left 18px
   background url("/public/image/index/fang.jpg") no-repeat 0 12px
+.text-indent
+	text-indent 24px
 // 通用样式 end
 // 模块1，介绍部分 start
 .banner
@@ -18,8 +20,6 @@ h4,h5,h6,ul,li
   margin-top 120px
   display flex
   justify-content center
-.text-indent
-  text-indent 24px
 .img1
 	background url("/public/image/index/3.jpg") no-repeat center bottom
 .img3
@@ -29,11 +29,15 @@ h4,h5,h6,ul,li
 .img4
 	background url("/public/image/index/4.jpg") no-repeat center top
 .img4,.img2,.img1,.img3
-  height 580px
-  width 270px
-  color #515769
-  margin-left 40px
-  h4
+	height 580px
+	width 270px
+	color #515769
+	margin-left 40px
+	display -webkit-box
+	-webkit-box-orient vertical
+	-webkit-line-clamp 3
+	overflow hidden
+	h4
     font-size 24px
   h5
     font-size 20px
@@ -59,12 +63,11 @@ h4,h5,h6,ul,li
     padding-top 0
     transition all .8s
     .img2-hover
-      height 530px
+      height 425px
 .img1,.img3
   .img1-hover
     transition all .8s
   h4
-    transition all .8s
     margin-top 108px
 .img1
   margin-left 0
@@ -72,25 +75,27 @@ h4,h5,h6,ul,li
   &:hover
     .img1-hover
       transition all .8s
-      height 530px
-    h4
-      margin-top 0
-      transition all .8s
+      height 425px
+.Pmargin
+	margin 0
+.Pmargin-top
+	margin-top 12px
 .font-weight
   font-weight bolder
 // 模块1，介绍部分 end
 // 模块2，聚焦行业 start
 .focus
-  height 700px
-  width 100%
-  background-color #232323
-  color #fff
-  display flex
-  justify-content center
+	height 700px
+	width 100%
+	background-color #232323
+	color #fff
+	display flex
+	justify-content center
 	div.focus-first-child
 		height 230px
 		width 500px
 		margin-top 140px
+		margin-left 35px
 		h4
 			font-size 36px
 			padding-bottom 27px
@@ -144,11 +149,11 @@ h4,h5,h6,ul,li
 	span
 		color #a6a7aa
 .module3-1
-	padding 0 30px 60px 30px
+	padding 0 30px 60px 40px
 .module3-2
+	margin-left 40px
 	display flex
 	justify-content space-around
-	padding 0 30px
 	div
 		width 350px
 		padding-right 42px
@@ -161,6 +166,10 @@ h4,h5,h6,ul,li
 				color #515769
 				display inline-block
 				margin 26px 8px 30px 0
+.module3-2-3
+	padding-right 35px!important
+	div
+		padding-right 0 !important
 .span-inline
   display inline-block
   font-size 10px
@@ -193,11 +202,10 @@ h4,h5,h6,ul,li
 // 模块3，业务模式 end
 // 模块4，新闻报道 start
 .module4
-	width 63%
 	margin 0 auto
 	color #a6a7aa
 	.module4-1
-		padding 140px 0 50px 20px
+		padding 140px 0 50px 45px
 .module5
   padding-top 50px
   height 370px
@@ -249,7 +257,7 @@ h4,h5,h6,ul,li
 // 模块4，新闻报道 end
 // 横线 start
 .line
-	width 62%
+	width 1200px
 	height 129px
 	margin 0 auto
 	div
@@ -288,6 +296,8 @@ h4,h5,h6,ul,li
 	img
 		display block
 		margin 0 auto
+.module6-3
+	margin-right 0
 .module6-1,.module6-3
 	height 300px
 	margin-top 60px
@@ -312,8 +322,9 @@ h4,h5,h6,ul,li
 	padding-top 50px
 	color #515769
 	.module7-1
-		width 100%
+		width 97%
 		margin 0 auto
+		padding-left 35px
 		span
 			color #a6a7aa
 .module7-2
@@ -325,7 +336,7 @@ h4,h5,h6,ul,li
 .module7-2-1
 	width 600px
 	height 600px
-	margin 65px 0 0 0
+	margin 65px 0 0 10px
 	background-color #fafafa
 	box-shadow 1px 1px 1px #ececec
 	border-radius 10px
@@ -347,4 +358,5 @@ h4,h5,h6,ul,li
 			margin-bottom 10px
 .module7-2-2
 	margin-left 80px
+	margin-right 10px
 //模块7，加入我们 end
