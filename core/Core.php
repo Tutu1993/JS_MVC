@@ -18,8 +18,8 @@ class Core
         $action = $route->action;
         self::$ctrlClass = $ctrlClass;
         self::$action = $action;
-        $ctrlFile =  APP.'/Ctrl/'.$ctrlClass.'Ctrl'.PHP;
-        $ctrlModule = MODULE.'\\ctrl\\'.$ctrlClass.'Ctrl';
+        $ctrlFile =  APP.'/ctrl/'.$ctrlClass.'Ctrl'.PHP;
+        $ctrlModule = MODULE.'\\Ctrl\\'.$ctrlClass.'Ctrl';
 
         if (is_file($ctrlFile)) {
             include $ctrlFile;
@@ -35,14 +35,17 @@ class Core
             }
         } else {
             // Header("Location:http://localhost/error/error_404");
-            throw new \Exception('Can not find the ctrl: '.$ctrlClass);
+            throw new \Exception('Can not find the ctrl: '.$ctrlClass.$ctrlFile);
         }
     }
 
     // include 未加载的文件
     public static function load($class)
     {
-        $class = str_replace('\\', '/', $class);
+
+		$array = explode('\\',strtolower($class));
+		$array[count($array) - 1] = ucfirst($array[count($array) - 1]);
+		$class = implode('/',$array);
 
         if (!isset(self::$classMap[$class])) {
             $file =  MVC.'/'.$class.PHP;
