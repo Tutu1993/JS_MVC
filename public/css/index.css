@@ -12,7 +12,16 @@ li {
 .module7 ul li {
   padding-right: 30px;
   padding-left: 18px;
-  background: url("/public/image/index/fang.jpg") no-repeat 0 12px;
+  position: relative;
+}
+.module7 ul li:after {
+  content: "";
+  width: 8px;
+  border: 1px solid #901d22;
+  background-color: #901d22;
+  position: absolute;
+  left: 0;
+  top: 12px;
 }
 .text-indent {
   text-indent: 24px;
@@ -160,7 +169,7 @@ li {
   border: 2px solid #901d22;
   position: absolute;
   top: 50px;
-  left: 20px;
+  left: 0;
 }
 .focus div.focus-first-child h5 {
   font-weight: inherit;
@@ -170,7 +179,7 @@ li {
   font-size: 14px;
 }
 .focus div.focus-last-child {
-  padding: 95px 0 0 200px;
+  padding: 65px 0 0 200px;
   width: 460px;
 }
 .focus div.focus-last-child input[type="radio"] {
@@ -296,7 +305,7 @@ li {
 .module3-2 div div {
   width: 350px;
   height: 240px;
-  background-color: rgba(195,0,0,0.8);
+  background-color: rgba(144,29,34,0.9);
   position: absolute;
   top: 240px;
   left: 0;
