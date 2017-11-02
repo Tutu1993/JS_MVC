@@ -30,7 +30,7 @@ li {
   font-weight: inherit;
   color: #fff;
   height: 75px;
-  background-color: #c30000;
+  background-color: #901d22;
   text-align: center;
   line-height: 75px;
   position: absolute;
@@ -44,12 +44,15 @@ li {
 .module1-top {
   margin-top: 70px;
 }
+.module1-right {
+  margin-right: 80px !important;
+}
 .module1-1-1,
 .module1-1-2,
 .module1-1-3,
 .module1-1-4 {
   background-color: #fff;
-  margin: 50px 40px;
+  margin: 50px 0;
   width: 558px;
   height: 265px;
   border: 1px solid #dbdbdb;
@@ -69,7 +72,7 @@ li {
 .module1-1-4 h4:after {
   content: "";
   width: 75px;
-  border: 2px solid #c30000;
+  border: 2px solid #901d22;
   position: absolute;
   top: 135px;
   left: 240px;
@@ -100,7 +103,7 @@ li {
 .module1-1-1:hover,
 .module1-1-3:hover {
   height: 580px;
-  border: 2px solid #c30000;
+  border: 2px solid #901d22;
 }
 .module1-1-1:hover div,
 .module1-1-3:hover div {
@@ -117,10 +120,10 @@ li {
 .module1-1-2:hover,
 .module1-1-4:hover {
   height: 580px;
-  border: 2px solid #c30000;
+  border: 2px solid #901d22;
   position: absolute;
   top: 70px;
-  left: -40px;
+  left: 0;
 }
 .module1-1-2:hover div,
 .module1-1-4:hover div {
@@ -129,12 +132,12 @@ li {
   transition: all 0.8s;
 }
 .module1-1-4:hover {
-  left: 600px;
+  left: 640px;
 }
 .focus {
   height: 700px;
   width: 100%;
-  background-color: #1a1617;
+  background-color: #232323;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -154,7 +157,7 @@ li {
 .focus div.focus-first-child h4:after {
   content: "";
   width: 75px;
-  border: 2px solid #c30000;
+  border: 2px solid #901d22;
   position: absolute;
   top: 50px;
   left: 20px;
@@ -224,6 +227,7 @@ li {
   color: #8a8a8b;
   font-size: 14px;
   margin-left: 50px;
+  margin-right: 40px;
 }
 .focus-last-child-1 >span {
   color: #8a8a8b;
@@ -235,7 +239,7 @@ li {
 .module3 {
   width: 64%;
   margin: 0 auto;
-  height: 635px;
+  height: 500px;
   padding-top: 96px;
 }
 .module3 span {
@@ -255,7 +259,7 @@ li {
 .module3-1 h4:after {
   content: "";
   width: 75px;
-  border: 2px solid #c30000;
+  border: 2px solid #901d22;
   position: absolute;
   top: 50px;
   left: 525px;
@@ -266,14 +270,12 @@ li {
   font-weight: inherit;
 }
 .module3-2 {
-  margin-left: 40px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .module3-2 div {
   width: 350px;
   height: 298px;
-  margin-right: 42px;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -296,18 +298,16 @@ li {
   height: 240px;
   background-color: rgba(195,0,0,0.8);
   position: absolute;
-  top: 300px;
+  top: 240px;
   left: 0;
   text-align: center;
+  transition: all 1s;
 }
 .module3-2 div div h5 {
   margin-top: 10px;
   font-size: 30px;
   color: #fff;
   display: inline-block;
-}
-.module3-2-3 {
-  padding-right: 35px !important;
 }
 .module3-2-3 div {
   padding-right: 0 !important;
@@ -319,11 +319,10 @@ li {
 }
 .span {
   display: block;
-  width: 350px;
+  width: 305px;
   height: 120px;
   overflow: hidden;
-  margin-top: 28px;
-  margin-bottom: 24px;
+  margin: 28px 0 24px 15px;
   font-size: 14px;
   line-height: 20px;
 }
@@ -340,79 +339,76 @@ li {
   background-color: #901d22;
   margin: 0 0 4px 5px;
 }
-.module4 {
-  margin: 0 auto;
-  color: #a6a7aa;
-}
-.module4 .module4-1 {
-  padding: 140px 0 50px 45px;
-}
 .module5 {
+  width: 100%;
   padding-top: 50px;
-  height: 370px;
+  height: 550px;
   background-color: #232323;
+  display: flex;
+  justify-content: center;
 }
-.tree-style {
-  height: 350px;
+.module5-1 {
+  width: 450px;
+  padding: 50px 30px;
+}
+.module5-1 h4 {
   color: #fff;
   position: relative;
+  margin-bottom: 35px;
 }
-.tree-style:before {
+.module5-1 h4:after {
   content: "";
-  width: 1px;
-  height: 320px;
-  background-color: #fff;
+  width: 75px;
+  border: 2px solid #901d22;
   position: absolute;
-  left: 600px;
+  top: 50px;
+  left: 0;
 }
-.tree-style a {
-  font-size: 12px;
-}
-.tree-parent1,
-.tree-parent2 {
-  width: 590px;
-  height: 300px;
-}
-.tree-parent1 .tree3:after,
-.tree-parent2 .tree3:after {
-  top: 150px;
-  left: 596px;
-}
-.tree1,
-.tree3,
-.tree2,
-.tree4 {
-  margin-bottom: 120px;
-}
-.tree1:after,
-.tree3:after,
-.tree2:after,
-.tree4:after {
-  content: "";
-  border: 5px solid #fff;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 596px;
-}
-.tree-parent2 {
-  text-align: right;
-  margin-top: 75px;
-}
-.tree-parent2 .tree2 {
-  margin-bottom: 118px;
-}
-.tree-parent2 .tree2:after {
-  top: 75px;
-  left: 596px;
-}
-.tree-parent2 .tree4:after {
-  top: 225px;
-  left: 596px;
-}
-.tree-span {
-  display: block;
+.module5-1 span {
   color: #fff;
+  font-size: 24px;
+}
+.module5-1 p {
+  color: #a2a2a2;
+  font-size: 14px;
+}
+.module5-2 {
+  width: 680px;
+}
+.module5-2 >div {
+  width: 680px;
+  height: 135px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+}
+.module5-2 >div img {
+  display: inline-block;
+  width: 185px;
+  height: 135px;
+  background-color: #901d22;
+}
+.module5-2 >div >div {
+  width: 495px;
+  height: 135px;
+  background-color: #fff;
+}
+.module5-2 >div >div h5 {
+  font-size: 14px;
+  font-weight: inherit;
+  color: #1a1617;
+  margin: 35px 15px;
+}
+.module5-2 >div >div div {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  margin-left: 40px;
+}
+.module5-2 >div >div span {
+  float: left;
+  font-size: 14px;
+  color: #8a8a8b;
 }
 .line {
   width: 1200px;
@@ -494,14 +490,27 @@ li {
   margin-bottom: 55px;
 }
 .module7 {
-  height: 868px;
-  padding-top: 50px;
+  height: 960px;
   color: #515769;
 }
 .module7 .module7-1 {
   width: 97%;
   margin: 0 auto;
   padding-left: 35px;
+  text-align: center;
+}
+.module7 .module7-1 h4 {
+  margin-top: 100px;
+  margin-bottom: 35px;
+  position: relative;
+}
+.module7 .module7-1 h4:after {
+  content: "";
+  width: 75px;
+  border: 2px solid #901d22;
+  position: absolute;
+  top: 50px;
+  left: 545px;
 }
 .module7 .module7-1 span {
   color: #a6a7aa;
@@ -517,7 +526,7 @@ li {
 .module7-2-1 {
   width: 600px;
   height: 600px;
-  margin: 65px 0 0 10px;
+  margin-top: 90px;
   background-color: #fafafa;
   box-shadow: 1px 1px 1px #ececec;
   border-radius: 10px;
@@ -531,18 +540,12 @@ li {
   margin: 0 0 0 104px;
   line-height: 25px;
 }
-.module7-2-1 div {
-  position: absolute;
-  left: 25%;
-  text-align: center;
-  bottom: 0;
-}
-.module7-2-1 div span {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
 .module7-2-2 {
   margin-left: 80px;
-  margin-right: 10px;
+}
+.module7-3 {
+  text-align: center;
+  color: #8a8a8b;
+  font-size: 14px;
+  margin-top: 60px;
 }

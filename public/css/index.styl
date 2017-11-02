@@ -24,7 +24,7 @@ h4,h5,h6,ul,li
 		font-weight inherit
 		color #fff
 		height 75px
-		background-color #c30000
+		background-color #901d22
 		text-align center
 		line-height 75px
 		position absolute
@@ -35,9 +35,11 @@ h4,h5,h6,ul,li
 	justify-content center
 .module1-top
 	margin-top 70px
+.module1-right
+	margin-right 80px!important
 .module1-1-1,.module1-1-2,.module1-1-3,.module1-1-4
 	background-color #fff
-	margin 50px 40px
+	margin 50px 0
 	width 558px
 	height 265px
 	border 1px solid #dbdbdb
@@ -49,7 +51,7 @@ h4,h5,h6,ul,li
 		&:after
 			content ""
 			width 75px
-			border 2px solid #c30000
+			border 2px solid #901d22
 			position absolute
 			top 135px
 			left 240px
@@ -67,7 +69,7 @@ h4,h5,h6,ul,li
 .module1-1-1,.module1-1-3
 	&:hover
 		height 580px
-		border 2px solid #c30000
+		border 2px solid #901d22
 		div
 			position absolute
 			top 270px
@@ -83,23 +85,23 @@ h4,h5,h6,ul,li
 .module1-1-2,.module1-1-4
 	&:hover
 		height 580px
-		border 2px solid #c30000
+		border 2px solid #901d22
 		position absolute
 		top 70px
-		left -40px
+		left 0
 		div
 			position absolute
 			top 270px
 			transition all .8s
 .module1-1-4
 	&:hover
-		left 600px
+		left 640px
 // 模块1，介绍部分 end
 // 模块2，聚焦行业 start
 .focus
 	height 700px
 	width 100%
-	background-color #1a1617
+	background-color #232323
 	color #fff
 	display flex
 	justify-content center
@@ -116,7 +118,7 @@ h4,h5,h6,ul,li
 			&:after
 				content ""
 				width 75px
-				border 2px solid #c30000
+				border 2px solid #901d22
 				position absolute
 				top 50px
 				left 20px
@@ -166,6 +168,7 @@ h4,h5,h6,ul,li
 		color #8a8a8b
 		font-size 14px
 		margin-left 50px
+		margin-right 40px
 	>span
 		color #8a8a8b
 		font-size 14px
@@ -177,7 +180,7 @@ h4,h5,h6,ul,li
 .module3
 	width 64%
 	margin 0 auto
-	height 635px
+	height 500px
 	padding-top 96px
 	span
 		color #fff
@@ -192,7 +195,7 @@ h4,h5,h6,ul,li
 		&:after
 			content ""
 			width 75px
-			border 2px solid #c30000
+			border 2px solid #901d22
 			position absolute
 			top 50px
 			left 525px
@@ -201,13 +204,11 @@ h4,h5,h6,ul,li
 	font-size 30px
 	font-weight inherit
 .module3-2
-	margin-left 40px
 	display flex
-	justify-content space-around
+	justify-content space-between
 	div
 		width 350px
 		height 298px
-		margin-right 42px
 		position relative
 		overflow hidden
 		text-align center
@@ -227,16 +228,16 @@ h4,h5,h6,ul,li
 			height 240px
 			background-color rgba(195,0,0,.8)
 			position absolute
-			top 300px
+			top 240px
 			left 0
 			text-align center
+			transition all 1s
 			h5
 				margin-top 10px
 				font-size 30px
 				color #fff
 				display inline-block
 .module3-2-3
-	padding-right 35px!important
 	div
 		padding-right 0 !important
 .span-inline
@@ -245,11 +246,10 @@ h4,h5,h6,ul,li
   text-transform uppercase
 .span
 	display block
-	width 350px
+	width 305px
 	height 120px
 	overflow hidden
-	margin-top 28px
-	margin-bottom 24px
+	margin 28px 0 24px 15px
 	font-size 14px
 	line-height 20px
 .span-position
@@ -265,59 +265,64 @@ h4,h5,h6,ul,li
 		margin 0 0 4px 5px
 // 模块3，业务模式 end
 // 模块4，新闻报道 start
-.module4
-	margin 0 auto
-	color #a6a7aa
-	.module4-1
-		padding 140px 0 50px 45px
 .module5
-  padding-top 50px
-  height 370px
-  background-color #232323
-.tree-style
-  height 350px
-  color #fff
-  position relative
-  &:before
-    content ""
-    width 1px
-    height 320px
-    background-color #fff
-    position absolute
-    left 600px
-  a
-    font-size 12px
-.tree-parent1,.tree-parent2
-  width 590px
-  height 300px
-  .tree3
-    &:after
-      top 150px
-      left 596px
-.tree1,.tree3,.tree2,.tree4
-  margin-bottom 120px
-  &:after
-    content ""
-    border 5px solid #fff
-    border-radius 50%
-    position absolute
-    top 0
-    left 596px
-.tree-parent2
-  text-align right
-  margin-top 75px
-  .tree2
-    margin-bottom 118px
-    &:after
-      top 75px
-      left 596px
-  .tree4
-    &:after
-      top 225px
-      left 596px
-.tree-span
-	display block
-	color #fff
+	width 100%
+	padding-top 50px
+	height 550px
+	background-color #232323
+	display flex
+	justify-content center
+.module5-1
+	width 450px
+	padding 50px 30px
+	h4
+		color #fff
+		position relative
+		margin-bottom 35px
+		&:after
+			content ""
+			width 75px
+			border 2px solid #901d22
+			position absolute
+			top 50px
+			left 0
+	span
+		color #fff
+		font-size 24px
+	p
+		color #a2a2a2
+		font-size 14px
+.module5-2
+	width 680px
+	>div
+		width 680px
+		height 135px
+		margin-bottom 25px
+		display flex
+		justify-content center
+		img
+			display inline-block
+			width 185px
+			height 135px
+			background-color #901d22
+		>div
+			width 495px
+			height 135px
+			background-color #fff
+			h5
+				font-size 14px
+				font-weight inherit
+				color #1a1617
+				margin 35px 15px
+			div
+				display flex
+				justify-content space-between
+				width 250px
+				margin-left 40px
+			span
+				float left
+				font-size 14px
+				color #8a8a8b
 // 模块4，新闻报道 end
 // 横线 start
 .line
@@ -382,13 +387,24 @@ h4,h5,h6,ul,li
 // 模块6，联系我们 end
 //模块7，加入我们 start
 .module7
-	height 868px
-	padding-top 50px
+	height 960px
 	color #515769
 	.module7-1
 		width 97%
 		margin 0 auto
 		padding-left 35px
+		text-align center
+		h4
+			margin-top 100px
+			margin-bottom 35px
+			position relative
+			&:after
+				content ""
+				width 75px
+				border 2px solid #901d22
+				position absolute
+				top 50px
+				left 545px
 		span
 			color #a6a7aa
 .module7-2
@@ -400,7 +416,7 @@ h4,h5,h6,ul,li
 .module7-2-1
 	width 600px
 	height 600px
-	margin 65px 0 0 10px
+	margin-top 90px
 	background-color #fafafa
 	box-shadow 1px 1px 1px #ececec
 	border-radius 10px
@@ -411,16 +427,11 @@ h4,h5,h6,ul,li
 		font-size 14px
 		margin 0 0 0 104px
 		line-height 25px
-	div
-		position absolute
-		left 25%
-		text-align center
-		bottom 0
-		span
-			display block
-			font-size 14px
-			margin-bottom 10px
 .module7-2-2
 	margin-left 80px
-	margin-right 10px
+.module7-3
+	text-align center
+	color #8a8a8b
+	font-size 14px
+	margin-top 60px
 //模块7，加入我们 end
