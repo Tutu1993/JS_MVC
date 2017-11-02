@@ -1,0 +1,100 @@
+{% extends "public.html" %}
+{% block meta %}
+<meta name="keywords" content="{{ keywords }}">
+<meta name="description" content="{{ description }}">
+{% endblock %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="/public/css/news_list.css">
+{% endblock %}
+
+{% block content %}
+<!-- banner-part start -->
+<section class="min-width banner"></section>
+<!-- banner-part end -->
+<!-- list-part start -->
+<section class="list">
+	<div class="container clear">
+		<div class="float-left">
+			<a href="/news/view"{% if type == 'view' %}class="active"{% endif %}>凯融视角</a>
+			<a href="/news/case"{% if type == 'case' %}class="active"{% endif %}>案例分析</a>
+			<a href="/news/event"{% if type == 'event' %}class="active"{% endif %}>凯融活动</a>
+		</div>
+		<div class="float-right">
+			<div class="box">
+				<a href="" class="float-right">
+					<h4>能否解除培训机构的内忧外患？</h4>
+					<img src="" alt="">
+				</a>
+				<p>实行分类管理，一定程度解决了民办教育的“外患”，即身份不明、定位不清、地位得不到保障，但更关键的是民办学校的“内忧”，“内忧”即民办学校的内部治理，规范办学。“内忧”不除，民办学校即便表面风光，却缺乏持续发展潜力，而且，公办民办不分、片面追求升学业绩的违规招生办学对地方教育发展非但没有积极贡献，反而制造教育乱象，破坏教育生态。</p>
+				<span>2017-08-01 转自中国教育培训联盟 凯融资本</span>
+			</div>
+			<div class="pagination">
+	            {% if page == 1 %}
+	            	<a href="javascript:void(0);" class="display"><</a>
+	            {% else %}
+	            	<a href="/news/{{ type }}/page/{{ page - 1 }}"><</a>
+	            {% endif %}
+
+	            {% if D_page < 6 %}
+	            	{% for i in 1..D_page %}
+	           			{% if i == page %}
+	            			<a href="javascript:void(0);" class="active">{{ i }}</a>
+	            		{% else %}
+	            			<a href="/news/{{ type }}/page/{{ i }}">{{ i }}</a>
+	            		{% endif %}
+	            	{% endfor %}
+            	{% else %}
+            		{% if page - 3 <= 0 and page + 2 < D_page %}
+            			{% for i in 1 .. 4 %}
+            				{% if page == i %}
+            					<a href="javascript:void(0);" class="active">{{ page }}</a>
+            				{% else %}
+            					{% if page == 1 %}
+            						<a href="/news/{{ type }}/page/{{ page + i - 1 }}">{{ page + i - 1 }}</a>
+            					{% elseif page == 2 %}
+            						<a href="/news/{{ type }}/page/{{ page + i - 2 }}">{{ page + i - 2 }}</a>
+            					{% elseif page == 3 %}
+            						<a href="/news/{{ type }}/page/{{ page + i - 3 }}">{{ page + i - 3 }}</a>
+        						{% endif %}
+            				{% endif %}
+        				{% endfor %}
+						<a href="javascript:void(0);" class="display">…</a>
+	            		<a href="/news/{{ type }}/page/{{ D_page }}">{{ D_page }}</a>
+	            	{% elseif page - 3 > 0 and page + 2 < D_page %}
+			            <a href="/news/{{ type }}/page/1">1</a>
+			            <a href="javascript:void(0);" class="display">…</a>
+			            <a href="/news/{{ type }}/page/{{ page - 1 }}">{{ page - 1 }}</a>
+			            <a href="javascript:void(0);" class="active">{{ page }}</a>
+			            <a href="/news/{{ type }}/page/{{ page + 1 }}">{{ page + 1 }}</a>
+			            <a href="javascript:void(0);" class="display">…</a>
+			            <a href="/news/{{ type }}/page/{{ D_page }}">{{ D_page }}</a>
+	            	{% elseif page - 3 > 0 and page + 2 >= D_page %}
+			            <a href="/news/{{ type }}/page/1">1</a>
+			            <a href="javascript:void(0);" class="display">…</a>
+	            		{% for i in D_page - 3 .. D_page %}
+				            {% if page == i %}
+				            	<a href="javascript:void(0);" class="active">{{ page }}</a>
+				            {% else %}
+	            				<a href="/news/{{ type }}/page/{{ i }}">{{ i }}</a>
+	            			{% endif %}
+	            		{% endfor %}
+	            	{% endif %}
+	            {% endif %}
+
+	            {% if page == D_page %}
+	            	<a href="javascript:void(0);" class="display">></a>
+	            {% else %}
+	            	<a href="/news/{{ type }}/page/{{ page + 1 }}">></a>
+	            {% endif %}
+        	</div>
+		</div>
+	</div>
+</section>
+<!-- list-part end -->
+{% endblock %}
+
+{% block js %}
+{% endblock %}
