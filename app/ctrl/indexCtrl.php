@@ -15,7 +15,7 @@ class indexCtrl extends Core
 
     public function index()
     {
-        // $database = new Database('info');
+        $database = new Database('news');
         $data = [
 			'title' => '首页'
 		];

@@ -1,0 +1,69 @@
+{% extends "public.html" %}
+{% block meta %}
+<meta name="keywords" content="{{ keywords }}">
+<meta name="description" content="{{ description }}">
+{% endblock %}
+
+{% block title %}{{ news.title }}{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="/public/css/news_show.min.css">
+{% endblock %}
+
+{% block content %}
+<!-- show-part start -->
+<section class="show">
+	<div class="container">
+		<h4>{{ news.title }}</h4>
+		<h5>2017-08-01 转自中国教育培训联盟 凯融资本</h5>
+		<div class="box"></div>
+		<div class="page clear">
+		    {% for key , value in D_news %}
+		        {% if value.id == news.id %}
+		            {% if key == 0 and loop.length != 1 %}
+		            	<a href="javascript:void(0);">上一篇&nbsp;&nbsp;没有了</a>
+		            	<a href="/news/show/id/{{ D_news[key + 1].id }}.html" title="{{ D_news[key + 1].title }}">下一篇&nbsp;&nbsp;{{ D_news[key + 1].title }}</a>
+		            {% endif %}
+		            {% if key > 0 and key < loop.length - 1 %}
+		            	<a href="/news/show/id/{{ D_news[key - 1].id }}.html" title="{{ D_news[key - 1].title }}">上一篇&nbsp;&nbsp;{{ D_news[key - 1].title }}</a>
+		            	<a href="/news/show/id/{{ D_news[key + 1].id }}.html" title="{{ D_news[key + 1].title }}">下一篇&nbsp;&nbsp;{{ D_news[key + 1].title }}</a>
+		            {% endif %}
+		            {% if key == loop.length - 1 and loop.length != 1 %}
+		            	<a href="/news/show/id/{{ D_news[key - 1].id }}.html" title="{{ D_news[key - 1].title }}">上一篇&nbsp;&nbsp;{{ D_news[key - 1].title }}</a>
+		            	<a href="javascript:void(0);">下一篇&nbsp;&nbsp;没有了</a>
+		            {% endif %}
+					{% if loop.length == 1 %}
+						<a href="javascript:void(0);">上一篇&nbsp;&nbsp;没有了</a>
+						<a href="javascript:void(0);">下一篇&nbsp;&nbsp;没有了</a>
+					{% endif %}
+		        {% endif %}
+		    {% endfor %}
+		</div>
+	</div>
+</section>
+<!-- show-part end -->
+{% endblock %}
+
+{% block js %}
+<script>
+	$(function(){
+		$.ajax({
+			type: 'POST',
+			url: '/app/interface/database',
+			data: {
+				table: 'news',
+				type: 'get',
+				data: {
+					columns: 'content',
+					where: {
+						id: {{ news.id }}
+					}
+				}
+			} ,
+			success: function (d){
+				$('.box').html(JSON.parse(d));
+			}
+		});
+	});
+</script>
+{% endblock %}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>list</title>
+	<link rel="stylesheet" href="/resource/css/pagination.min.css">
+</head>
+<body>
+	<section>
+		<h4>凯融视角</h4>
+		<div id="Searchresult_1">分页初始化完成后这里的内容会被替换。</div>
+		<div id="Pagination_1" class="pagination"><!-- 这里显示分页 --></div>
+		<div id="hiddenresult_1" style="display:none;">
+			{% for value in news_1 %}
+				<div class='show'>
+					<a href="/editor/change/id/{{ value.id }}.html">{{ value.title }}</a><span class="delete">×</span>
+				</div>
+			{% endfor %}
+		</div>
+	</section>
+	<section>
+		<h4>案例分析</h4>
+		<div id="Searchresult_2">分页初始化完成后这里的内容会被替换。</div>
+		<div id="Pagination_2" class="pagination"><!-- 这里显示分页 --></div>
+		<div id="hiddenresult_2" style="display:none;">
+			{% for value in news_2 %}
+				<div class='show'>
+					<a href="/editor/change/id/{{ value.id }}.html">{{ value.title }}</a><span class="delete">×</span>
+				</div>
+			{% endfor %}
+		</div>
+	</section>
+	<section>
+		<h4>凯融活动</h4>
+		<div id="Searchresult_3">分页初始化完成后这里的内容会被替换。</div>
+		<div id="Pagination_3" class="pagination"><!-- 这里显示分页 --></div>
+		<div id="hiddenresult_3" style="display:none;">
+			{% for value in news_3 %}
+				<div class='show'>
+					<a href="/editor/change/id/{{ value.id }}.html">{{ value.title }}</a><span class="delete">×</span>
+				</div>
+			{% endfor %}
+		</div>
+	</section>
+	<script src="/resource/js/jquery.min.js"></script>
+	<script src="/resource/js/jquery.pagination.js"></script>
+	<script>
+	$(function(){
+		//总数目
+		var length_1 = $("#hiddenresult_1 .show").length,
+			length_2 = $("#hiddenresult_2 .show").length,
+			length_3 = $("#hiddenresult_1 .show").length;
+		//从表单获取分页元素参数
+		$("#Pagination_1").pagination(length_1, {
+			callback: Callback_1,
+			items_per_page: 5,
+			num_display_entries: 3,
+			num_edge_entries: 2,
+			prev_text: '<',
+			next_text: '>'
+		});
+		function Callback_1(page_index, jq){
+			// 从表单获取每页的显示的列表项数目
+			var items_per_page = 5;
+			var max_elem = Math.min((page_index+1) * items_per_page, length_1);
+			$("#Searchresult_1").html("");
+			// 获取加载元素
+			for(var i=page_index*items_per_page;i<max_elem;i++){
+				$("#Searchresult_1").append($("#hiddenresult_1 .show:eq("+i+")").clone());
+			}
+			//阻止单击事件
+			return false;
+		};
+		//从表单获取分页元素参数
+		$("#Pagination_2").pagination(length_2, {
+			callback: Callback_2,
+			items_per_page: 5,
+			num_display_entries: 3,
+			num_edge_entries: 2,
+			prev_text: '<',
+			next_text: '>'
+		});
+		function Callback_2(page_index, jq){
+			// 从表单获取每页的显示的列表项数目
+			var items_per_page = 5;
+			var max_elem = Math.min((page_index+1) * items_per_page, length_2);
+			$("#Searchresult_2").html("");
+			// 获取加载元素
+			for(var i=page_index*items_per_page;i<max_elem;i++){
+				$("#Searchresult_2").append($("#hiddenresult_2 .show:eq("+i+")").clone());
+			}
+			//阻止单击事件
+			return false;
+		};
+		//从表单获取分页元素参数
+		$("#Pagination_3").pagination(length_3, {
+			callback: Callback_3,
+			items_per_page: 5,
+			num_display_entries: 3,
+			num_edge_entries: 2,
+			prev_text: '<',
+			next_text: '>'
+		});
+		function Callback_3(page_index, jq){
+			// 从表单获取每页的显示的列表项数目
+			var items_per_page = 5;
+			var max_elem = Math.min((page_index+1) * items_per_page, length_3);
+			$("#Searchresult_3").html("");
+			// 获取加载元素
+			for(var i=page_index*items_per_page;i<max_elem;i++){
+				$("#Searchresult_3").append($("#hiddenresult_3 .show:eq("+i+")").clone());
+			}
+			//阻止单击事件
+			return false;
+		};
+	});
+	</script>
+</body>
+</html>

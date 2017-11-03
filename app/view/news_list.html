@@ -7,7 +7,7 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block link %}
-<link rel="stylesheet" href="/public/css/news_list.css">
+<link rel="stylesheet" href="/public/css/news_list.min.css">
 {% endblock %}
 
 {% block content %}
@@ -23,14 +23,16 @@
 			<a href="/news/event"{% if type == 'event' %}class="active"{% endif %}>凯融活动</a>
 		</div>
 		<div class="float-right">
-			<div class="box">
-				<a href="" class="float-right">
-					<h4>能否解除培训机构的内忧外患？</h4>
-					<img src="" alt="">
-				</a>
-				<p>实行分类管理，一定程度解决了民办教育的“外患”，即身份不明、定位不清、地位得不到保障，但更关键的是民办学校的“内忧”，“内忧”即民办学校的内部治理，规范办学。“内忧”不除，民办学校即便表面风光，却缺乏持续发展潜力，而且，公办民办不分、片面追求升学业绩的违规招生办学对地方教育发展非但没有积极贡献，反而制造教育乱象，破坏教育生态。</p>
-				<span>2017-08-01 转自中国教育培训联盟 凯融资本</span>
-			</div>
+			{% for new in news %}
+				<div class="box">
+					<a href="/news/show/id/{{ new.id }}.html" class="float-right">
+						<h4>{{ new.title }}</h4>
+						<img src="{{ new.pic }}" alt="{{ news.title }}">
+					</a>
+					<p>{{ new.summary }}</p>
+					<span>2017-08-01 转自中国教育培训联盟 凯融资本</span>
+				</div>
+			{% endfor %}
 			<div class="pagination">
 	            {% if page == 1 %}
 	            	<a href="javascript:void(0);" class="display"><</a>
