@@ -1,6 +1,6 @@
 <?php
 include './database_model.php';
 
-echo json_encode($result);
+echo json_encode($_POST);
 
 die();

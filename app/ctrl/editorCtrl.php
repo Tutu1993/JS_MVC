@@ -71,4 +71,29 @@ class editorCtrl extends Core
             echo '<meta http-equiv="refresh" content="2; url=/editor/login" />';
         }
     }
+
+    public function change()
+    {
+        if (isset($_SESSION['isLogin'])) {
+            $id = explode('.', $_GET['id'])[0];
+            $data = [
+				'id' => $id
+			];
+	        $this->assign($data);
+            $this->display('editor_change.html');
+        } else {
+            echo 'PLEASE LOGIN!';
+            echo '<meta http-equiv="refresh" content="2; url=/editor/login" />';
+        }
+    }
+
+	public function insert()
+    {
+        if (isset($_SESSION['isLogin'])) {
+            $this->display('editor_insert.html');
+        } else {
+            echo 'PLEASE LOGIN!';
+            echo '<meta http-equiv="refresh" content="2; url=/editor/login" />';
+        }
+    }
 }

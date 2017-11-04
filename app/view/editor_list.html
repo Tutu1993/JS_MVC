@@ -9,6 +9,16 @@
 </head>
 <body>
 	<section>
+		<h4>查找新闻模块</h4>
+		<div>
+			需要查找的关键词：<input type="text" name="search"><button id="search">查找</button>
+		</div>
+		<h4>内容展示区</h4>
+		<div class='search_content'>
+
+		</div>
+	</section>
+	<section>
 		<h4>凯融视角</h4>
 		<div id="Searchresult_1">分页初始化完成后这里的内容会被替换。</div>
 		<div id="Pagination_1" class="pagination"><!-- 这里显示分页 --></div>
@@ -116,6 +126,34 @@
 			return false;
 		};
 	});
+	</script>
+	<script>
+		$(function() {
+			$('#search').on('click', function() {
+				const $keyWord = $("input[name = 'search']").val();
+				$.ajax({
+					type: 'POST',
+					url: '/app/interface/database',
+					data: {
+						table: 'news',
+						type: 'select',
+						data: {
+							columns: [
+								'id',
+								'title'
+							],
+							where: {
+								'title[~]': $keyWord
+							}
+						}
+					} ,
+					success: function (d){
+						console.log(JSON.parse(d));
+						const data = JSON.parse(d);
+					}
+				});
+			});
+		});
 	</script>
 </body>
 </html>

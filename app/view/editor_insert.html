@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>增加新闻</title>
+	<link rel="stylesheet" href="/resource/css/normalize.min.css">
+</head>
+<body>
+	<section>
+		<div>
+			标题：<input type="text" name="title">
+		</div>
+		<div>
+			<label for="fileUpLoad">缩略图：</label><input type="file" id="fileUpLoad" name="fileUpLoad" />
+		    <div>
+		        <img src="" id="upload" width="200" height="200" style="background-color: #ccc">
+		    </div>
+		</div>
+		<div>
+			摘要：<input type="text" name="summary">
+		</div>
+		<div id="editor">
+			<p>请输入您想要的内容！</p>
+		</div>
+		<div>
+			<button id="submit">确认提交</button>
+		</div>
+	</section>
+	<script src="/resource/js/jquery.min.js"></script>
+	<script src="/resource/js/wangEditor.min.js"></script>
+	<script src="/resource/js/ajaxfileupload.js"></script>
+	<script>
+		$(document).ready(function(){
+			const E = window.wangEditor;
+			const editor = new E('#editor');
+			editor.customConfig.uploadImgServer = '/app/interface/imgUpload';
+			editor.create();
+			$('#fileUpLoad').on('change', function () {
+	            $.ajaxFileUpload({
+                    url: '/app/interface/imgUpload',
+                    secureuri: false,
+                    fileElementId: 'fileUpLoad',
+                    dataType: 'JSON',
+                    success: function (data, status){
+                        $('#upload').attr("src", JSON.parse(data).data);
+                    },
+                    error: function (data, status, e){
+                        console.log(e);
+                    }
+	            })
+	        });
+			$('#submit').on('click', function(){
+				const $title = $("input[name = 'title']").val(),
+					$pic = $('#upload').attr("src"),
+					$summary = $("input[name = 'summary']").val(),
+					$content = editor.txt.html();
+				if ($title !== '' && $pic !== '' && $summary !== '' && $content !== '') {
+					$.ajax({
+						type: 'POST',
+						url: '/app/interface/database',
+						data: {
+							table: 'news',
+							type: 'insert',
+							data: {
+								data: {
+									title: $title,
+									pic: $pic,
+									summary: $summary,
+									content: $content
+								}
+							}
+						} ,
+						success: function (d){
+							JSON.parse(d) ? alert('OK，OK，更新了已经~') : alert('没改什么就别提交了');
+						}
+					});
+				} else {
+					alert('看看有没有落下什么内容没填的好吗？');
+				}
+			});
+		});
+	</script>
+</body>
+</html>
