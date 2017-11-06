@@ -19,6 +19,12 @@
 		    </div>
 		</div>
 		<div>
+		    文章类型：
+		    <label for="type_0"><input type="radio" name="type" value="0" id="type_0"/>凯融视角</label>
+		    <label for="type_1"><input type="radio" name="type" value="1" id="type_1"/>案例分析</label>
+		    <label for="type_2"><input type="radio" name="type" value="2" id="type_2"/>凯融活动</label>
+		</div>
+		<div>
 			摘要：<input type="text" name="summary">
 		</div>
 		<div id="editor">
@@ -54,9 +60,10 @@
 			$('#submit').on('click', function(){
 				const $title = $("input[name = 'title']").val(),
 					$pic = $('#upload').attr("src"),
+					$type = $("input[name = 'type']:checked").val(),
 					$summary = $("input[name = 'summary']").val(),
 					$content = editor.txt.html();
-				if ($title !== '' && $pic !== '' && $summary !== '' && $content !== '') {
+				if ($title !== '' && $pic !== '' && $type !== '' && $summary !== '' && $content !== '') {
 					$.ajax({
 						type: 'POST',
 						url: '/app/interface/database',
@@ -67,11 +74,12 @@
 								data: {
 									title: $title,
 									pic: $pic,
+									type: $type,
 									summary: $summary,
 									content: $content
 								}
 							}
-						} ,
+						},
 						success: function (d){
 							JSON.parse(d) ? alert('OK，OK，更新了已经~') : alert('没改什么就别提交了');
 						}
