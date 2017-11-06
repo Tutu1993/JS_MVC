@@ -53,6 +53,8 @@ class newsCtrl extends Core
 				'id',
 				'title',
 				'pic',
+				'time',
+				'tips',
 				'summary'
 			],
 			[
@@ -90,6 +92,8 @@ class newsCtrl extends Core
 				'id',
 				'title',
 				'pic',
+				'time',
+				'tips',
 				'summary'
 			],
 			[
@@ -127,6 +131,8 @@ class newsCtrl extends Core
 				'id',
 				'title',
 				'pic',
+				'time',
+				'tips',
 				'summary'
 			],
 			[
@@ -155,6 +161,8 @@ class newsCtrl extends Core
 				'id',
 				'title',
 				'summary',
+				'time',
+				'tips',
 				'type'
 			],
 			[

@@ -3,14 +3,14 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
-<form action="/app/model/islogin.php" method="post" class="editor_login bc">
-	<div class="login_name">
-		用户名：<input type="text" name="name" class="input">
+<form action="/app/model/islogin.php" method="post" class="editor_login">
+	<div>
+		<span>用户名：</span><input type="text" name="name">
 	</div>
 	<div>
-		密码：<input type="password" name="password" class="input login_code">
+		<span>密码：</span><input type="password" name="password">
 	</div>
-	<input type="button" id="btn" class="btn" value="登陆">
+	<input type="button" id="btn" value="登陆">
 </form>
 {% endblock %}
 

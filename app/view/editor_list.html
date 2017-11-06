@@ -7,32 +7,32 @@
 {% endblock %}
 
 {% block content %}
-<section class="editor_login">
-	<a href="/editor/insert" class="list_new">添加新闻</a>
+<section>
+	<a href="/editor/insert">添加新闻</a>
 </section>
-<section class="editor_login">
-	<h4 class="list_h4">查找新闻模块</h4>
-	<div class="editor_login_div">
-		需要查找的关键词：<input type="text" name="search" class="input list_input border_radius"><button id="search" class="list_search">查找</button>
+<section>
+	<h4>查找新闻模块</h4>
+	<div>
+		需要查找的关键词：<input type="text" name="search"><button id="search">查找</button>
 	</div>
-	<h4 class="list_h4">内容展示区</h4>
+	<h4>内容展示区</h4>
 	<div class='search_content'>
 	</div>
 </section>
-<section class="editor_login">
-	<h4 class="list_h4">凯融视角</h4>
+<section>
+	<h4>凯融视角</h4>
 	<div id="Searchresult_1">分页初始化完成后这里的内容会被替换。</div>
 	<div id="Pagination_1" class="pagination"><!-- 这里显示分页 --></div>
 	<div id="hiddenresult_1" style="display:none;">
 		{% for value in news_1 %}
 			<div class='show'>
-				<a href="/editor/change/id/{{ value.id }}.html" class="list_a">{{ value.title }}</a><span class="delete">×</span>
+				<a href="/editor/change/id/{{ value.id }}.html">{{ value.title }}</a><span class="delete">×</span>
 			</div>
 		{% endfor %}
 	</div>
-</section class="editor_login">
-<section class="editor_login">
-	<h4 class="list_h4">案例分析</h4>
+</section>
+<section>
+	<h4>案例分析</h4>
 	<div id="Searchresult_2">分页初始化完成后这里的内容会被替换。</div>
 	<div id="Pagination_2" class="pagination"><!-- 这里显示分页 --></div>
 	<div id="hiddenresult_2" style="display:none;">
@@ -43,8 +43,8 @@
 		{% endfor %}
 	</div>
 </section>
-<section class="editor_login">
-	<h4 class="list_h4">凯融活动</h4>
+<section>
+	<h4>凯融活动</h4>
 	<div id="Searchresult_3">分页初始化完成后这里的内容会被替换。</div>
 	<div id="Pagination_3" class="pagination"><!-- 这里显示分页 --></div>
 	<div id="hiddenresult_3" style="display:none;">
