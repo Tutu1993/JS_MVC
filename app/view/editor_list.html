@@ -8,15 +8,14 @@
 
 {% block content %}
 <div class="editor_list">
-	<section>
+	<section class="list_insert">
 		<a href="/editor/insert">添加新闻</a>
 	</section>
-	<section>
-		<h4>查找新闻模块</h4>
+	<section class="list_search">
+		<h4>查找新闻</h4>
 		<div>
-			需要查找的关键词：<input type="text" name="search"><button id="search">查找</button>
+			关键词：<input type="text" name="search"><button id="search">查找</button>
 		</div>
-		<h4>内容展示区</h4>
 		<div class='search_content'>
 		</div>
 	</section>
@@ -68,7 +67,7 @@
 		//总数目
 		var length_1 = $("#hiddenresult_1 .show").length,
 			length_2 = $("#hiddenresult_2 .show").length,
-			length_3 = $("#hiddenresult_1 .show").length;
+			length_3 = $("#hiddenresult_3 .show").length;
 		//从表单获取分页元素参数
 		$("#Pagination_1").pagination(length_1, {
 			callback: Callback_1,
