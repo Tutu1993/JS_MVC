@@ -1,0 +1,48 @@
+.show {
+  border-top: 96px solid #232323;
+  padding: 108px 0 0;
+}
+.container {
+  padding: 0 105px;
+  width: 990px;
+  color: #000;
+}
+.container h4,
+.container h5 {
+  margin: 0;
+}
+.container h4 {
+  font-size: 36px;
+  padding-bottom: 30px;
+}
+.container h5 {
+  font-size: 14px;
+}
+.box {
+  font-size: 0;
+  padding-top: 35px;
+}
+.box p {
+  font-size: 14px;
+  line-height: 24px;
+  text-align: justify;
+}
+.box img {
+  width: 100%;
+}
+.page {
+  padding: 35px 0 70px;
+  text-align: center;
+  width: 760px;
+  margin: 0 auto;
+}
+.page a {
+  float: left;
+  padding: 0 40px;
+  width: 300px;
+  color: #000;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
