@@ -1,198 +1,198 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>list</title>
-	<link rel="stylesheet" href="/resource/css/pagination.min.css">
-</head>
-<body>
-	<section>
-		<a href="/editor/insert">添加新闻</a>
-	</section>
-	<section>
-		<h4>查找新闻模块</h4>
-		<div>
-			需要查找的关键词：<input type="text" name="search"><button id="search">查找</button>
-		</div>
-		<h4>内容展示区</h4>
-		<div class='search_content'>
-		</div>
-	</section>
-	<section>
-		<h4>凯融视角</h4>
-		<div id="Searchresult_1">分页初始化完成后这里的内容会被替换。</div>
-		<div id="Pagination_1" class="pagination"><!-- 这里显示分页 --></div>
-		<div id="hiddenresult_1" style="display:none;">
-			{% for value in news_1 %}
-				<div class='show'>
-					<a href="/editor/change/id/{{ value.id }}.html">{{ value.title }}</a><span class="delete">×</span>
-				</div>
-			{% endfor %}
-		</div>
-	</section>
-	<section>
-		<h4>案例分析</h4>
-		<div id="Searchresult_2">分页初始化完成后这里的内容会被替换。</div>
-		<div id="Pagination_2" class="pagination"><!-- 这里显示分页 --></div>
-		<div id="hiddenresult_2" style="display:none;">
-			{% for value in news_2 %}
-				<div class='show'>
-					<a href="/editor/change/id/{{ value.id }}.html">{{ value.title }}</a><span class="delete">×</span>
-				</div>
-			{% endfor %}
-		</div>
-	</section>
-	<section>
-		<h4>凯融活动</h4>
-		<div id="Searchresult_3">分页初始化完成后这里的内容会被替换。</div>
-		<div id="Pagination_3" class="pagination"><!-- 这里显示分页 --></div>
-		<div id="hiddenresult_3" style="display:none;">
-			{% for value in news_3 %}
-				<div class='show'>
-					<a href="/editor/change/id/{{ value.id }}.html">{{ value.title }}</a><span class="delete">×</span>
-				</div>
-			{% endfor %}
-		</div>
-	</section>
-	<script src="/resource/js/jquery.min.js"></script>
-	<script src="/resource/js/jquery.pagination.js"></script>
-	<script>
-		$(function(){
-			//总数目
-			var length_1 = $("#hiddenresult_1 .show").length,
-				length_2 = $("#hiddenresult_2 .show").length,
-				length_3 = $("#hiddenresult_1 .show").length;
-			//从表单获取分页元素参数
-			$("#Pagination_1").pagination(length_1, {
-				callback: Callback_1,
-				items_per_page: 5,
-				num_display_entries: 3,
-				num_edge_entries: 2,
-				prev_text: '<',
-				next_text: '>'
-			});
-			function Callback_1(page_index, jq){
-				// 从表单获取每页的显示的列表项数目
-				var items_per_page = 5;
-				var max_elem = Math.min((page_index+1) * items_per_page, length_1);
-				$("#Searchresult_1").html("");
-				// 获取加载元素
-				for(var i=page_index*items_per_page;i<max_elem;i++){
-					$("#Searchresult_1").append($("#hiddenresult_1 .show:eq("+i+")").clone());
-				}
-				//阻止单击事件
-				return false;
-			};
-			//从表单获取分页元素参数
-			$("#Pagination_2").pagination(length_2, {
-				callback: Callback_2,
-				items_per_page: 5,
-				num_display_entries: 3,
-				num_edge_entries: 2,
-				prev_text: '<',
-				next_text: '>'
-			});
-			function Callback_2(page_index, jq){
-				// 从表单获取每页的显示的列表项数目
-				var items_per_page = 5;
-				var max_elem = Math.min((page_index+1) * items_per_page, length_2);
-				$("#Searchresult_2").html("");
-				// 获取加载元素
-				for(var i=page_index*items_per_page;i<max_elem;i++){
-					$("#Searchresult_2").append($("#hiddenresult_2 .show:eq("+i+")").clone());
-				}
-				//阻止单击事件
-				return false;
-			};
-			//从表单获取分页元素参数
-			$("#Pagination_3").pagination(length_3, {
-				callback: Callback_3,
-				items_per_page: 5,
-				num_display_entries: 3,
-				num_edge_entries: 2,
-				prev_text: '<',
-				next_text: '>'
-			});
-			function Callback_3(page_index, jq){
-				// 从表单获取每页的显示的列表项数目
-				var items_per_page = 5;
-				var max_elem = Math.min((page_index+1) * items_per_page, length_3);
-				$("#Searchresult_3").html("");
-				// 获取加载元素
-				for(var i=page_index*items_per_page;i<max_elem;i++){
-					$("#Searchresult_3").append($("#hiddenresult_3 .show:eq("+i+")").clone());
-				}
-				//阻止单击事件
-				return false;
-			};
+{% extends "editor.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="/resource/css/pagination.min.css">
+{% endblock %}
+
+{% block content %}
+<section>
+	<a href="/editor/insert">添加新闻</a>
+</section>
+<section>
+	<h4>查找新闻模块</h4>
+	<div>
+		需要查找的关键词：<input type="text" name="search"><button id="search">查找</button>
+	</div>
+	<h4>内容展示区</h4>
+	<div class='search_content'>
+	</div>
+</section>
+<section>
+	<h4>凯融视角</h4>
+	<div id="Searchresult_1">分页初始化完成后这里的内容会被替换。</div>
+	<div id="Pagination_1" class="pagination"><!-- 这里显示分页 --></div>
+	<div id="hiddenresult_1" style="display:none;">
+		{% for value in news_1 %}
+			<div class='show'>
+				<a href="/editor/change/id/{{ value.id }}.html">{{ value.title }}</a><span class="delete">×</span>
+			</div>
+		{% endfor %}
+	</div>
+</section>
+<section>
+	<h4>案例分析</h4>
+	<div id="Searchresult_2">分页初始化完成后这里的内容会被替换。</div>
+	<div id="Pagination_2" class="pagination"><!-- 这里显示分页 --></div>
+	<div id="hiddenresult_2" style="display:none;">
+		{% for value in news_2 %}
+			<div class='show'>
+				<a href="/editor/change/id/{{ value.id }}.html">{{ value.title }}</a><span class="delete">×</span>
+			</div>
+		{% endfor %}
+	</div>
+</section>
+<section>
+	<h4>凯融活动</h4>
+	<div id="Searchresult_3">分页初始化完成后这里的内容会被替换。</div>
+	<div id="Pagination_3" class="pagination"><!-- 这里显示分页 --></div>
+	<div id="hiddenresult_3" style="display:none;">
+		{% for value in news_3 %}
+			<div class='show'>
+				<a href="/editor/change/id/{{ value.id }}.html">{{ value.title }}</a><span class="delete">×</span>
+			</div>
+		{% endfor %}
+	</div>
+</section>
+{% endblock %}
+
+{% block js %}
+<script src="/resource/js/jquery.pagination.js"></script>
+<script>
+	$(function(){
+		//总数目
+		var length_1 = $("#hiddenresult_1 .show").length,
+			length_2 = $("#hiddenresult_2 .show").length,
+			length_3 = $("#hiddenresult_1 .show").length;
+		//从表单获取分页元素参数
+		$("#Pagination_1").pagination(length_1, {
+			callback: Callback_1,
+			items_per_page: 5,
+			num_display_entries: 3,
+			num_edge_entries: 2,
+			prev_text: '<',
+			next_text: '>'
 		});
-	</script>
-	<!-- 查找 -->
-	<script>
-		$(function() {
-			$('#search').on('click', function() {
-				const $keyWord = $("input[name = 'search']").val();
+		function Callback_1(page_index, jq){
+			// 从表单获取每页的显示的列表项数目
+			var items_per_page = 5;
+			var max_elem = Math.min((page_index+1) * items_per_page, length_1);
+			$("#Searchresult_1").html("");
+			// 获取加载元素
+			for(var i=page_index*items_per_page;i<max_elem;i++){
+				$("#Searchresult_1").append($("#hiddenresult_1 .show:eq("+i+")").clone());
+			}
+			//阻止单击事件
+			return false;
+		};
+		//从表单获取分页元素参数
+		$("#Pagination_2").pagination(length_2, {
+			callback: Callback_2,
+			items_per_page: 5,
+			num_display_entries: 3,
+			num_edge_entries: 2,
+			prev_text: '<',
+			next_text: '>'
+		});
+		function Callback_2(page_index, jq){
+			// 从表单获取每页的显示的列表项数目
+			var items_per_page = 5;
+			var max_elem = Math.min((page_index+1) * items_per_page, length_2);
+			$("#Searchresult_2").html("");
+			// 获取加载元素
+			for(var i=page_index*items_per_page;i<max_elem;i++){
+				$("#Searchresult_2").append($("#hiddenresult_2 .show:eq("+i+")").clone());
+			}
+			//阻止单击事件
+			return false;
+		};
+		//从表单获取分页元素参数
+		$("#Pagination_3").pagination(length_3, {
+			callback: Callback_3,
+			items_per_page: 5,
+			num_display_entries: 3,
+			num_edge_entries: 2,
+			prev_text: '<',
+			next_text: '>'
+		});
+		function Callback_3(page_index, jq){
+			// 从表单获取每页的显示的列表项数目
+			var items_per_page = 5;
+			var max_elem = Math.min((page_index+1) * items_per_page, length_3);
+			$("#Searchresult_3").html("");
+			// 获取加载元素
+			for(var i=page_index*items_per_page;i<max_elem;i++){
+				$("#Searchresult_3").append($("#hiddenresult_3 .show:eq("+i+")").clone());
+			}
+			//阻止单击事件
+			return false;
+		};
+	});
+</script>
+<!-- 查找 -->
+<script>
+	$(function() {
+		$('#search').on('click', function() {
+			const $keyWord = $("input[name = 'search']").val();
+			$.ajax({
+				type: 'POST',
+				url: '/app/interface/fuzzy_search',
+				data: {
+					table: 'news',
+					type: 'select',
+					data: {
+						columns: [
+							'id',
+							'title'
+						],
+						where: {
+							'title': $keyWord
+						}
+					}
+				},
+				success: function (d){
+					const data = JSON.parse(d);
+					$('.search_content').html('');
+
+					$(JSON.parse(d)).each(function() {
+						const $data = "<div class='show'><a href='/editor/change/id/" + this.id + ".html'>" + this.title + "</a><span class='delete'>×</span></div>";
+						$('.search_content').append($data);
+					});
+				}
+			});
+		});
+	});
+</script>
+<!-- 删除 -->
+<script>
+	$(document).ready(function(){
+		$('body').on('click','.delete',function (){
+			var _this = $(this);
+			const msg = '真的确定要删除吗？';
+			if(confirm(msg)) {
+				const $id = _this.prev().attr('href').substr(18).split('.')[0];
 				$.ajax({
 					type: 'POST',
-					url: '/app/interface/fuzzy_search',
+					url: '/app/interface/database',
 					data: {
 						table: 'news',
-						type: 'select',
+						type: 'delete',
 						data: {
-							columns: [
-								'id',
-								'title'
-							],
 							where: {
-								'title': $keyWord
+								'id': $id
 							}
 						}
 					},
 					success: function (d){
-						const data = JSON.parse(d);
-						$('.search_content').html('');
-
-						$(JSON.parse(d)).each(function() {
-							const $data = "<div class='show'><a href='/editor/change/id/" + this.id + ".html'>" + this.title + "</a><span class='delete'>×</span></div>";
-							$('.search_content').append($data);
-						});
+						_this.parent().remove();
+						location.reload([true]);
 					}
 				});
-			});
+			} else {
+				return false;
+			}
 		});
-	</script>
-	<!-- 删除 -->
-	<script>
-		$(document).ready(function(){
-			$('body').on('click','.delete',function (){
-                var _this = $(this);
-                const msg = '真的确定要删除吗？';
-                if(confirm(msg)) {
-                    const $id = _this.prev().attr('href').substr(18).split('.')[0];
-                    $.ajax({
-                        type: 'POST',
-                        url: '/app/interface/database',
-						data: {
-							table: 'news',
-							type: 'delete',
-							data: {
-								where: {
-									'id': $id
-								}
-							}
-						},
-                        success: function (d){
-                            _this.parent().remove();
-                            location.reload([true]);
-                        }
-                    });
-                } else {
-                    return false;
-                }
-            });
-		});
-	</script>
-</body>
-</html>
+	});
+</script>
+{% endblock %}
