@@ -20,6 +20,10 @@ class editorCtrl extends Core
         if (isset($_SESSION['isLogin'])) {
             Header("Location:http://localhost/editor/list");
         } else {
+			$data = [
+				'title' => '登陆页面'
+			];
+	        $this->assign($data);
             $this->display('editor_login.html');
         }
     }

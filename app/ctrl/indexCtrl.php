@@ -31,7 +31,6 @@ class indexCtrl extends Core
 			'title' => '首页',
 			'news' => $news
 		];
-		p($news);
         $this->assign($data);
         $this->display('index.html');
     }

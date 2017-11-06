@@ -1,50 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>denglu</title>
-</head>
-<body>
-	<form action="/app/model/islogin.php" method="post">
-        <div>
-            用户名：<input type="text" name="name">
-        </div>
-        <div>
-            密码：<input type="password" name="password">
-        </div>
-        <input type="button" id="btn" value="登陆">
-    </form>
-	<script src="/resource/js/jquery.min.js"></script>
-	<script>
-		$(document).ready(function(){
-			$('#btn').on('click', function(){
-				const $name = $("input[name = 'name']").val(),
-					$password = $("input[name = 'password']").val();
-				$.ajax({
-					type: 'POST',
-					url: '/app/interface/isLogin',
+{% extends "editor.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<form action="/app/model/islogin.php" method="post" class="editor_login">
+	<div>
+		用户名：<input type="text" name="name">
+	</div>
+	<div>
+		密码：<input type="password" name="password">
+	</div>
+	<input type="button" id="btn" value="登陆">
+</form>
+{% endblock %}
+
+{% block js %}
+<script>
+	$(document).ready(function(){
+		$('#btn').on('click', function(){
+			const $name = $("input[name = 'name']").val(),
+				$password = $("input[name = 'password']").val();
+			$.ajax({
+				type: 'POST',
+				url: '/app/interface/isLogin',
+				data: {
+					table: 'info',
+					type: 'has',
 					data: {
-						table: 'info',
-						type: 'has',
-						data: {
-							where: {
-								name: $name,
-								password: $password
-							}
-						}
-					} ,
-					success: function (d){
-						if (JSON.parse(d)) {
-							window.location.href='/editor/list';
-						} else {
-							alert('请确认输入密码是否正确');
+						where: {
+							name: $name,
+							password: $password
 						}
 					}
-				});
+				} ,
+				success: function (d){
+					if (JSON.parse(d)) {
+						window.location.href='/editor/list';
+					} else {
+						alert('请确认输入密码是否正确');
+					}
+				}
 			});
 		});
-	</script>
-</body>
-</html>
+	});
+</script>
+{% endblock %}
