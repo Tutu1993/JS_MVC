@@ -15,17 +15,19 @@ class indexCtrl extends Core
 
     public function index()
     {
-        $database = new Database('news');
-		$news = $database->select_d([
-			'id',
-			'title',
-			'pic',
-			'tips'
-		],
-		[
-			'ORDER' => ['id' => 'DESC'],
-			'LIMIT' => [0, 3]
-		]
+        $database = new Database('news_table');
+		$news = $database->select_d(
+			[
+				'id',
+				'title',
+				'pic',
+				'tips',
+				'time'
+			],
+			[
+				'ORDER' => ['id' => 'DESC'],
+				'LIMIT' => [0, 3]
+			]
 		);
         $data = [
 			'title' => '首页',
