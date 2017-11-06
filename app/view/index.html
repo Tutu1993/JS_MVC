@@ -131,24 +131,21 @@
 </section>
 <!--业务模式 end-->
 <!--新闻报道 start-->
-<section class="min-width">
-    <div class="module5 container">
-        <div class="module5-1">
+<section class="min-width module5">
+    <div class="container clear">
+        <div class="module5-1 float-left">
             <h4 class="h4">新闻报道</h4>
             <span>News report</span>
             <p>主流媒体对凯融的认可</p>
         </div>
-        <div class="module5-2">
+        <div class="module5-2 float-right">
 			{% for new in news %}
 				<div>
 	                <a href="/news/show/id/{{ new.id }}">
 	                    <img src="{{ new.pic }}" alt="">
-	                    <h5>{{ new.title }}</h5>
+	                    <h5>{{ new.title }}死了考古发掘了可是结果绿豆价格士大夫士大夫是否发是士大夫速度发射点个</h5>
 	                </a>
-	                <div>
-	                    <span>{{ new.tips }}</span>
-	                    <span>2017-08-01</span>
-	                </div>
+                    <p><span>{{ new.tips }}阿历克阿喀琉斯房价阿</span>2017-08-01</p>
 	            </div>
 			{% endfor %}
         </div>
