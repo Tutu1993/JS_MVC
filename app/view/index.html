@@ -139,36 +139,18 @@
             <p>主流媒体对凯融的认可</p>
         </div>
         <div class="module5-2">
-            <div>
-                <a href="#">
-                    <img src="" alt="">
-                    <h5>《民办教育促进法》，能否解除培训机构的内忧外患？</h5>
-                </a>
-                <div>
-                    <span>人民日报</span>
-                    <span>2017-08-01</span>
-                </div>
-            </div>
-            <div>
-                <a href="#">
-                    <img src="" alt="">
-                    <h5>《民办教育促进法》，能否解除培训机构的内忧外患？</h5>
-                </a>
-                <div>
-                    <span>人民日报</span>
-                    <span>2017-08-01</span>
-                </div>
-            </div>
-            <div>
-                <a href="#">
-                    <img src="" alt="">
-                    <h5>《民办教育促进法》，能否解除培训机构的内忧外患？</h5>
-                </a>
-                <div>
-                    <span>人民日报</span>
-                    <span>2017-08-01</span>
-                </div>
-            </div>
+			{% for new in news %}
+				<div>
+	                <a href="/news/show/id/{{ new.id }}">
+	                    <img src="{{ new.pic }}" alt="">
+	                    <h5>{{ new.title }}</h5>
+	                </a>
+	                <div>
+	                    <span>{{ new.tips }}</span>
+	                    <span>2017-08-01</span>
+	                </div>
+	            </div>
+			{% endfor %}
         </div>
     </div>
 </section>

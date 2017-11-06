@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>修改新闻</title>
+	<link rel="stylesheet" href="/resource/css/normalize.min.css">
+</head>
+<body>
+	<section>
+		<div>
+			标题：<input type="text" name="title">
+		</div>
+		<div>
+			<label for="fileUpLoad">缩略图：</label><input type="file" id="fileUpLoad" name="fileUpLoad" />
+		    <div>
+		        <img src="" id="upload" width="200" height="200" style="background-color: #ccc">
+		    </div>
+		</div>
+		<div>
+		    文章类型：
+		    <label for="type_0"><input type="radio" name="type" value="0" id="type_0"/>凯融视角</label>
+		    <label for="type_1"><input type="radio" name="type" value="1" id="type_1"/>案例分析</label>
+		    <label for="type_2"><input type="radio" name="type" value="2" id="type_2"/>凯融活动</label>
+		</div>
+		<div>
+			摘要：<input type="text" name="summary">
+		</div>
+		<div id="editor">
+			<p>请输入您想要的内容！</p>
+		</div>
+		<div>
+			<button id="submit">确认提交</button>
+		</div>
+	</section>
+	<script src="/resource/js/jquery.min.js"></script>
+	<script src="/resource/js/wangEditor.min.js"></script>
+	<script src="/resource/js/ajaxfileupload.js"></script>
+	<script>
+		$(document).ready(function(){
+			const E = window.wangEditor;
+			const editor = new E('#editor');
+			editor.customConfig.uploadImgServer = '/app/interface/imgUpload';
+			editor.create();
+			$.ajax({
+				type: 'POST',
+				url: '/app/interface/database',
+				data: {
+					table: 'news',
+					type: 'get',
+					data: {
+						columns: '*',
+						where: {
+							id: {{ id }}
+						}
+					}
+				} ,
+				success: function (d){
+					const data = JSON.parse(d);
+					$("input[name = 'title']").val(data.title);
+					$('#upload').attr("src", data.pic);
+					$('#type_' + data.type).prop('checked','checked');
+					$("input[name = 'summary']").val(data.summary);
+					editor.txt.html(data.content);
+				}
+			});
+			$('#fileUpLoad').on('change', function () {
+	            $.ajaxFileUpload({
+                    url: '/app/interface/imgUpload',
+                    secureuri: false,
+                    fileElementId: 'fileUpLoad',
+                    dataType: 'JSON',
+                    success: function (data, status){
+                        $('#upload').attr("src", JSON.parse(data).data);
+                    },
+                    error: function (data, status, e){
+                        console.log(e);
+                    }
+	            })
+	        });
+			$('#submit').on('click', function(){
+				const $title = $("input[name = 'title']").val(),
+					$pic = $('#upload').attr("src"),
+					$type = $("input[name = 'type']:checked").val(),
+					$summary = $("input[name = 'summary']").val(),
+					$content = editor.txt.html();
+				if ($title !== '' && $pic !== '' && $summary !== '' && $content !== '') {
+					$.ajax({
+						type: 'POST',
+						url: '/app/interface/database',
+						data: {
+							table: 'news',
+							type: 'update',
+							data: {
+								data: {
+									title: $title,
+									pic: $pic,
+									type: $type,
+									summary: $summary,
+									content: $content
+								},
+								where: {
+									id: {{ id }}
+								}
+							}
+						} ,
+						success: function (d){
+							JSON.parse(d) ? alert('OK，OK，更新了已经~') : alert('没改什么就别提交了');
+						}
+					});
+				} else {
+					alert('看看有没有落下什么内容没填的好吗？');
+				}
+			});
+		});
+	</script>
+</body>
+</html>
