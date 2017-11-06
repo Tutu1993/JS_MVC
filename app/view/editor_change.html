@@ -3,38 +3,38 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
-<section>
+<div class="editor_form editor_insert">
 	<div>
-		标题：<input type="text" name="title">
+		<span>标题：</span><input type="text" name="title">
 	</div>
 	<div>
-		<label for="fileUpLoad">缩略图：</label><input type="file" id="fileUpLoad" name="fileUpLoad" />
+		<label for="fileUpLoad"><span>缩略图：</span></label><input type="file" id="fileUpLoad" name="fileUpLoad" />
 		<div>
-			<img src="" id="upload" width="200" height="200" style="background-color: #ccc">
+			<img src="" id="upload" width="185" height="135" style="background-color: #ccc;margin: 10px 0 10px 100px">
 		</div>
 	</div>
 	<div>
-		文章类型：
-		<label for="type_0"><input type="radio" name="type" value="0" id="type_0"/>凯融视角</label>
+		<span>文章类型：</span>
+		<label for="type_0"><input type="radio" name="type" value="0" id="type_0" checked/>凯融视角</label>
 		<label for="type_1"><input type="radio" name="type" value="1" id="type_1"/>案例分析</label>
 		<label for="type_2"><input type="radio" name="type" value="2" id="type_2"/>凯融活动</label>
 	</div>
 	<div>
-		时间：<input type="text" name="time">
+		<span>时间：</span><input type="text" name="time">
 	</div>
 	<div>
-		转自：<input type="text" name="tips">
+		<span>转自：</span><input type="text" name="tips">
 	</div>
 	<div>
-		摘要：<input type="text" name="summary">
+		<span>摘要：</span><input type="text" name="summary">
 	</div>
 	<div id="editor">
 		<p>请输入您想要的内容！</p>
 	</div>
 	<div>
-		<button id="submit">确认提交</button>
+		<input type="button" id="submit" value="确认提交">
 	</div>
-</section>
+</div>
 {% endblock %}
 
 {% block js %}
@@ -115,7 +115,12 @@
 						}
 					} ,
 					success: function (d){
-						JSON.parse(d) ? alert('OK，OK，更新了已经~') : alert('没改什么就别提交了');
+						if (JSON.parse(d)) {
+							alert('OK，OK，更新了已经~');
+							window.location.href='/editor/list';
+						} else {
+							alert('没改什么就别提交了');
+						}
 					}
 				});
 			} else {

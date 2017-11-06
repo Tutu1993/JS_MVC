@@ -3,7 +3,7 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
-<form action="/app/model/islogin.php" method="post" class="editor_login">
+<div class="editor_form editor_login">
 	<div>
 		<span>用户名：</span><input type="text" name="name">
 	</div>
@@ -11,7 +11,7 @@
 		<span>密码：</span><input type="password" name="password">
 	</div>
 	<input type="button" id="btn" value="登陆">
-</form>
+</div>
 {% endblock %}
 
 {% block js %}

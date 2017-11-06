@@ -1,4 +1,4 @@
-form
+.editor_form
 	span
 		display inline-block
 		text-align right
@@ -13,6 +13,10 @@ input[type = 'text'], input[type = 'password']
 	font-size 16px
 	padding 0 5px
 	margin 10px 0
+input[type = 'text']:focus, input[type = 'password']:focus
+	border-bottom 1px solid #4239fb
+input[type = 'file']
+	border none
 input:focus
 	outline none
 //login start
@@ -32,60 +36,26 @@ input:focus
 		background #fff
 		margin-top 20px
 		cursor pointer
-.login_bc
-	position absolute
-	background-color #006ba3
-	width 100%
-	height 100%
-.input
-	border 1px solid #71cff3
-	height 50px
-	width 200px
-	box-sizing border-box
-	border-radius 5px
-	outline none
-.btn
-	width 150px
-	height 50px
-	margin-top 20px
-	background-color #59c0eb
-	border-radius 10px
-	margin-left 40px
-	border none
-.login_name
-	margin-top 150px
-	margin-bottom 20px
-.login_code
-	margin-left 15px
 //login end
+//insert start
+.editor_insert
+	background #fff
+	width 1200px
+	margin 0 auto
+	label
+		margin 10px 0
+		display inline-block
+	input[type = 'button']
+		margin-bottom 100px
+		cursor pointer
+#editor
+	margin 20px 0
+	.w-e-text-container
+		min-height: 500px!important
+//insert end
 //list start
-.list_new
-	width 100%
-	font-size 30px
-	color #000
-	display block
-	margin 50px 0
-	text-decoration none
-.border_radius
-	border-top-right-radius 0
-	border-bottom-right-radius 0
-.list_h4
-	font-size 24px
-	font-weight normal
-.list_search
-	width 80px
-	height 50px
-	border-radius 5px
-	border-top-left-radius 0
-	border-bottom-left-radius 0
-	background-color #59c0eb
-	border none
-	outline-color #333
-	padding 0
-	outline none
-.list_a
-	font-size 18px
-	display inline-block
-	text-decoration none
-	margin-bottom 10px
+.editor_list
+	width 1200px
+	margin 0 auto
+	padding-top 50px
 	//list end

@@ -7,54 +7,58 @@
 {% endblock %}
 
 {% block content %}
-<section>
-	<a href="/editor/insert">添加新闻</a>
-</section>
-<section>
-	<h4>查找新闻模块</h4>
-	<div>
-		需要查找的关键词：<input type="text" name="search"><button id="search">查找</button>
-	</div>
-	<h4>内容展示区</h4>
-	<div class='search_content'>
-	</div>
-</section>
-<section>
-	<h4>凯融视角</h4>
-	<div id="Searchresult_1">分页初始化完成后这里的内容会被替换。</div>
-	<div id="Pagination_1" class="pagination"><!-- 这里显示分页 --></div>
-	<div id="hiddenresult_1" style="display:none;">
-		{% for value in news_1 %}
-			<div class='show'>
-				<a href="/editor/change/id/{{ value.id }}.html">{{ value.title }}</a><span class="delete">×</span>
+<div class="editor_list">
+	<section>
+		<a href="/editor/insert">添加新闻</a>
+	</section>
+	<section>
+		<h4>查找新闻模块</h4>
+		<div>
+			需要查找的关键词：<input type="text" name="search"><button id="search">查找</button>
+		</div>
+		<h4>内容展示区</h4>
+		<div class='search_content'>
+		</div>
+	</section>
+	<section>
+		<div>
+			<h4>凯融视角</h4>
+			<div id="Searchresult_1">分页初始化完成后这里的内容会被替换。</div>
+			<div id="Pagination_1" class="pagination"><!-- 这里显示分页 --></div>
+			<div id="hiddenresult_1" style="display:none;">
+				{% for value in news_1 %}
+					<div class='show'>
+						<a href="/editor/change/id/{{ value.id }}.html">{{ value.title }}</a><span class="delete">×</span>
+					</div>
+				{% endfor %}
 			</div>
-		{% endfor %}
-	</div>
-</section>
-<section>
-	<h4>案例分析</h4>
-	<div id="Searchresult_2">分页初始化完成后这里的内容会被替换。</div>
-	<div id="Pagination_2" class="pagination"><!-- 这里显示分页 --></div>
-	<div id="hiddenresult_2" style="display:none;">
-		{% for value in news_2 %}
-			<div class='show'>
-				<a href="/editor/change/id/{{ value.id }}.html">{{ value.title }}</a><span class="delete">×</span>
+		</div>
+		<div>
+			<h4>案例分析</h4>
+			<div id="Searchresult_2">分页初始化完成后这里的内容会被替换。</div>
+			<div id="Pagination_2" class="pagination"><!-- 这里显示分页 --></div>
+			<div id="hiddenresult_2" style="display:none;">
+				{% for value in news_2 %}
+					<div class='show'>
+						<a href="/editor/change/id/{{ value.id }}.html">{{ value.title }}</a><span class="delete">×</span>
+					</div>
+				{% endfor %}
 			</div>
-		{% endfor %}
-	</div>
-</section>
-<section>
-	<h4>凯融活动</h4>
-	<div id="Searchresult_3">分页初始化完成后这里的内容会被替换。</div>
-	<div id="Pagination_3" class="pagination"><!-- 这里显示分页 --></div>
-	<div id="hiddenresult_3" style="display:none;">
-		{% for value in news_3 %}
-			<div class='show'>
-				<a href="/editor/change/id/{{ value.id }}.html">{{ value.title }}</a><span class="delete">×</span>
+		</div>
+		<div>
+			<h4>凯融活动</h4>
+			<div id="Searchresult_3">分页初始化完成后这里的内容会被替换。</div>
+			<div id="Pagination_3" class="pagination"><!-- 这里显示分页 --></div>
+			<div id="hiddenresult_3" style="display:none;">
+				{% for value in news_3 %}
+					<div class='show'>
+						<a href="/editor/change/id/{{ value.id }}.html">{{ value.title }}</a><span class="delete">×</span>
+					</div>
+				{% endfor %}
 			</div>
-		{% endfor %}
-	</div>
-</section>
+		</div>
+	</section>
+</div>
 {% endblock %}
 
 {% block js %}
