@@ -20,27 +20,36 @@
 		$('#btn').on('click', function(){
 			const $name = $("input[name = 'name']").val(),
 				$password = $("input[name = 'password']").val();
-			$.ajax({
-				type: 'POST',
-				url: '/app/interface/isLogin',
-				data: {
-					table: 'info',
-					type: 'has',
+			if ($name !== '' && $password !== '') {
+				$.ajax({
+					type: 'POST',
+					url: '/app/interface/isLogin',
 					data: {
-						where: {
-							name: $name,
-							password: $password
+						table: 'info',
+						type: 'has',
+						data: {
+							where: {
+								name: $name,
+								password: $password
+							}
+						}
+					} ,
+					success: function (d){
+						if (JSON.parse(d)) {
+							window.location.href='/editor/list';
+						} else {
+							alert('请确认输入密码是否正确');
 						}
 					}
-				} ,
-				success: function (d){
-					if (JSON.parse(d)) {
-						window.location.href='/editor/list';
-					} else {
-						alert('请确认输入密码是否正确');
-					}
-				}
-			});
+				});
+			} else {
+				alert('请确认已输入用户名或密码！')
+			}
+		});
+		$(document).keyup(function(event){
+		  if(event.keyCode ==13){
+		    $("#btn").click();
+		  }
 		});
 	});
 </script>
