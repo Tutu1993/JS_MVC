@@ -15,9 +15,15 @@
 	</div>
 	<div>
 		文章类型：
-		<label for="type_0"><input type="radio" name="type" value="0" id="type_0"/>凯融视角</label>
+		<label for="type_0"><input type="radio" name="type" value="0" id="type_0" checked/>凯融视角</label>
 		<label for="type_1"><input type="radio" name="type" value="1" id="type_1"/>案例分析</label>
 		<label for="type_2"><input type="radio" name="type" value="2" id="type_2"/>凯融活动</label>
+	</div>
+	<div>
+		时间：<input type="text" name="time">
+	</div>
+	<div>
+		转自：<input type="text" name="tips">
 	</div>
 	<div>
 		摘要：<input type="text" name="summary">
@@ -58,27 +64,36 @@
 			const $title = $("input[name = 'title']").val(),
 				$pic = $('#upload').attr("src"),
 				$type = $("input[name = 'type']:checked").val(),
+				$time = $("input[name = 'time']").val(),
+				$tips = $("input[name = 'tips']").val(),
 				$summary = $("input[name = 'summary']").val(),
 				$content = editor.txt.html();
-			if ($title !== '' && $pic !== '' && $type !== '' && $summary !== '' && $content !== '') {
+			if ($title !== '' && $pic !== '' && $type !== '' && $time !== '' && $tips !== '' && $summary !== '' && $content !== '') {
 				$.ajax({
 					type: 'POST',
 					url: '/app/interface/database',
 					data: {
-						table: 'news',
+						table: 'news_table',
 						type: 'insert',
 						data: {
 							data: {
 								title: $title,
 								pic: $pic,
 								type: $type,
+								time: $time,
+								tips: $tips,
 								summary: $summary,
 								content: $content
 							}
 						}
 					},
 					success: function (d){
-						JSON.parse(d) ? alert('OK，OK，更新了已经~') : alert('没改什么就别提交了');
+						if (JSON.parse(d)) {
+							alert('OK，OK，更新了已经~');
+							window.location.href='/editor/list';
+						} else {
+							alert('没改什么就别提交了');
+						}
 					}
 				});
 			} else {

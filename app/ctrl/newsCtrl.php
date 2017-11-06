@@ -15,7 +15,7 @@ class newsCtrl extends Core
 
     public function index()
     {
-        $database = new Database('news');
+        $database = new Database('news_table');
 		$news = $database->select_d(
 			[
 				'id',
@@ -37,7 +37,7 @@ class newsCtrl extends Core
 
 	public function view()
     {
-        $database = new Database('news');
+        $database = new Database('news_table');
 		$page = isset($_GET['page']) ? $_GET['page'] : 1;
 		$D_page = $database->select_d(
 			[
@@ -74,7 +74,7 @@ class newsCtrl extends Core
 
 	public function case()
     {
-		$database = new Database('news');
+		$database = new Database('news_table');
 		$page = isset($_GET['page']) ? $_GET['page'] : 1;
 		$D_page = $database->select_d(
 			[
@@ -111,7 +111,7 @@ class newsCtrl extends Core
 
 	public function event()
     {
-		$database = new Database('news');
+		$database = new Database('news_table');
 		$page = isset($_GET['page']) ? $_GET['page'] : 1;
 		$D_page = $database->select_d(
 			[
@@ -149,7 +149,7 @@ class newsCtrl extends Core
 	public function show()
     {
 		$id = explode('.', $_GET['id'])[0];
-        $database = new Database('news');
+        $database = new Database('news_table');
 		$news = $database->get_d(
 			[
 				'id',

@@ -31,7 +31,7 @@ class editorCtrl extends Core
     public function list()
     {
         if (isset($_SESSION['isLogin'])) {
-			$database = new Database('news');
+			$database = new Database('news_table');
 			$news_1 = $database->select_d(
 				[
 					'id',
@@ -81,6 +81,7 @@ class editorCtrl extends Core
         if (isset($_SESSION['isLogin'])) {
             $id = explode('.', $_GET['id'])[0];
             $data = [
+				'title' => '修改新闻',
 				'id' => $id
 			];
 	        $this->assign($data);
@@ -94,6 +95,10 @@ class editorCtrl extends Core
 	public function insert()
     {
         if (isset($_SESSION['isLogin'])) {
+			$data = [
+				'title' => '添加新闻'
+			];
+	        $this->assign($data);
             $this->display('editor_insert.html');
         } else {
             echo 'PLEASE LOGIN!';
