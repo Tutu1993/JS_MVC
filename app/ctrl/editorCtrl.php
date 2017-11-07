@@ -18,7 +18,7 @@ class editorCtrl extends Core
     public function login()
     {
         if (isset($_SESSION['isLogin'])) {
-            Header("Location:http://localhost/editor/list");
+            Header("Location:http://localhost/editor/lists");
         } else {
 			$data = [
 				'title' => '登陆页面'
@@ -28,7 +28,7 @@ class editorCtrl extends Core
         }
     }
 
-    public function list()
+    public function lists()
     {
         if (isset($_SESSION['isLogin'])) {
 			$database = new Database('news_table');
@@ -69,7 +69,7 @@ class editorCtrl extends Core
 				'news_3' => $news_3
 			];
 	        $this->assign($data);
-            $this->display('editor_list.html');
+            $this->display('editor_lists.html');
         } else {
             echo 'PLEASE LOGIN!';
             echo '<meta http-equiv="refresh" content="2; url=/editor/login" />';
