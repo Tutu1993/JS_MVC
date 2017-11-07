@@ -156,12 +156,16 @@
 				},
 				success: function (d){
 					const data = JSON.parse(d);
-					$('.search_content').html('');
-
-					$(JSON.parse(d)).each(function() {
-						const $data = "<div class='show'><a href='/editor/change/id/" + this.id + ".html'>" + this.title + "</a><span class='delete'>×</span></div>";
-						$('.search_content').append($data);
-					});
+					console.log(data);
+					if (data.length !== 0) {
+						$('.search_content').html('');
+						$(JSON.parse(d)).each(function() {
+							const $data = "<div class='show'><a href='/editor/change/id/" + this.id + ".html'>" + this.title + "</a><span class='delete'>×</span></div>";
+							$('.search_content').append($data);
+						});
+					} else {
+						alert('没有找到包含当前关键词的新闻');
+					}
 				}
 			});
 		});

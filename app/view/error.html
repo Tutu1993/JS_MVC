@@ -5,36 +5,83 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Error</title>
+	<title>404 not found!</title>
+	<style>
+		body, h4, h5, h6, p, a {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			background-color: #5a5a5a;
+			color: #fff;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+		.clear:after {
+			content: '';
+			clear: both;
+			display: block;
+			overflow: hidden;
+			font-size: 0;
+			height: 0;
+		}
+		.content {
+			width: 390px;
+			margin: 0 auto;
+			position: absolute;
+     		top: 50%;
+			left: calc(50% - 210px);
+    		transform: translateY(-50%);
+		}
+		h4 {
+			font-size: 80px;
+			float: left;
+			line-height: 80px;
+			width: 150px;
+		}
+		h5, h6, p, a{
+			float: right;
+			width: 220px;
+			text-align: left;
+		}
+		h5 {
+			font-size: 24px;
+			line-height: 24px;
+			margin-top: 10px;
+		}
+		h6 {
+			font-size: 16px;
+			line-height: 16px;
+			margin-top: 8px;
+		}
+		p {
+			font-size: 12px;
+			line-height: 12px;
+			margin-top: 5px;
+			font-weight: bold;
+			margin-bottom: 100px;
+		}
+		a {
+			display: block;
+			color: #fff;
+			margin-bottom: 10px;
+			text-decoration: none;
+		}
+	</style>
 </head>
 
 <body>
-	404 not found!
-	<script src="/resource/js/jquery.min.js"></script>
-	<script>
-		$(document).ready(function() {
-			const $table = 'info';
-			const $type = 'select';
-			const $data = {
-					columns: 'uid',
-					where: {
-						name: 'chengdiankeji'
-					}
-				};
-			$.ajax({
-		        type: 'POST',
-		        url: '/app/interface/database',
-		        data: {
-					table: $table,
-		            type: $type,
-					data: $data
-		        },
-		        success: function (d){
-		            console.log(JSON.parse(d));
-		        }
-        	});
-		});
-	</script>
+	<div class="content clear">
+		<h4>404</h4>
+		<h5>抱歉！</h5>
+		<h6>您所访问的页面不存在。</h6>
+		<p>The page you visited does not exist.</p>
+		<a href="javascript:history.back(-1)">>>返回上一级页面</a>
+		<a href="/index">>>返回网站首页</a>
+	</div>
 </body>
 
 </html>

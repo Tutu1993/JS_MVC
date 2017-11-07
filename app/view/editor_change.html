@@ -70,7 +70,7 @@
 				editor.txt.html(data.content);
 			}
 		});
-		$('#fileUpLoad').on('change', function () {
+		$('body').on('change', '#fileUpLoad', function () {
 			$.ajaxFileUpload({
 				url: '/app/interface/imgUpload',
 				secureuri: false,
@@ -82,7 +82,7 @@
 				error: function (data, status, e){
 					console.log(e);
 				}
-			})
+			});
 		});
 		$('#submit').on('click', function(){
 			const $title = $("input[name = 'title']").val(),

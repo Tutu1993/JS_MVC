@@ -29,13 +29,13 @@ class Core
                 if (is_callable(array($ctrl, $action))) {
                     $ctrl->$action();
                 } else {
-                    // Header("Location:http://localhost/error/error_404");
-                    throw new \Exception('Can not find the action: '.$action);
+                    Header("Location:http://localhost/error");
+                    // throw new \Exception('Can not find the action: '.$action);
                 }
             }
         } else {
-            // Header("Location:http://localhost/error/error_404");
-            throw new \Exception('Can not find the ctrl: '.$ctrlClass.$ctrlFile);
+            Header("Location:http://localhost/error");
+            // throw new \Exception('Can not find the ctrl: '.$ctrlClass.$ctrlFile);
         }
     }
 
