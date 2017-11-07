@@ -140,7 +140,7 @@
 			const $keyWord = $("input[name = 'search']").val();
 			$.ajax({
 				type: 'POST',
-				url: '/app/interface/fuzzy_search',
+				url: '/app/interface/fuzzy_search.php',
 				data: {
 					table: 'news_table',
 					type: 'select',
@@ -181,7 +181,7 @@
 				const $id = _this.prev().attr('href').substr(18).split('.')[0];
 				$.ajax({
 					type: 'POST',
-					url: '/app/interface/database',
+					url: '/app/interface/database.php',
 					data: {
 						table: 'news_table',
 						type: 'delete',

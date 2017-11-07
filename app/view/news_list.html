@@ -18,9 +18,9 @@
 <section class="list">
 	<div class="container clear">
 		<div class="float-left">
-			<a href="/news/view"{% if type == 'view' %}class="active"{% endif %}>凯融视角</a>
-			<a href="/news/case"{% if type == 'case' %}class="active"{% endif %}>案例分析</a>
-			<a href="/news/event"{% if type == 'event' %}class="active"{% endif %}>凯融活动</a>
+			<a href="/news/views"{% if type == 'views' %}class="active"{% endif %}>凯融视角</a>
+			<a href="/news/cases"{% if type == 'cases' %}class="active"{% endif %}>案例分析</a>
+			<a href="/news/events"{% if type == 'events' %}class="active"{% endif %}>凯融活动</a>
 		</div>
 		<div class="float-right">
 			{% for new in news %}

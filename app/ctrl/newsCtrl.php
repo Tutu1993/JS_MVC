@@ -35,7 +35,7 @@ class newsCtrl extends Core
         $this->display('news.html');
     }
 
-	public function view()
+	public function views()
     {
         $database = new Database('news_table');
 		$page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -65,7 +65,7 @@ class newsCtrl extends Core
 		);
 		$data = [
 			'title' => '凯融视角',
-			'type' => 'view',
+			'type' => 'views',
 			'D_page' => ceil(count($D_page) / 5),
 			'page' => $page,
 			'news' => $news
@@ -74,7 +74,7 @@ class newsCtrl extends Core
         $this->display('news_list.html');
     }
 
-	public function case()
+	public function cases()
     {
 		$database = new Database('news_table');
 		$page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -104,7 +104,7 @@ class newsCtrl extends Core
 		);
 		$data = [
 			'title' => '案例分析',
-			'type' => 'case',
+			'type' => 'cases',
 			'D_page' => ceil(count($D_page) / 5),
 			'page' => $page,
 			'news' => $news
@@ -113,7 +113,7 @@ class newsCtrl extends Core
         $this->display('news_list.html');
     }
 
-	public function event()
+	public function events()
     {
 		$database = new Database('news_table');
 		$page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -143,7 +143,7 @@ class newsCtrl extends Core
 		);
 		$data = [
 			'title' => '凯融活动',
-			'type' => 'event',
+			'type' => 'events',
 			'D_page' => ceil(count($D_page) / 5),
 			'page' => $page,
 			'news' => $news
